@@ -237,15 +237,17 @@ p { color: var(--text-dim); }
   .sb-brand .mark::after, .sb-status .dot::after { animation: none !important; }
 }
 
-/* Custom Scrollbars & Touch Utilities */
-.scroll-x {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+/* Hide all scrollbars while preserving full scrollability */
+html, body, .sidebar, .scroll-x, .agent-chip-row, .docs-nav, .filter-tabs, .pg-messages {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
-.scroll-x::-webkit-scrollbar { height: 4px; }
-.scroll-x::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
 
 body.nav-open { overflow: hidden; }
 
