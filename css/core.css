@@ -236,6 +236,37 @@ p { color: var(--text-dim); }
   .sb-brand .mark::after, .sb-status .dot::after { animation: none !important; }
 }
 
+/* Custom Scrollbars & Touch Utilities */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.scroll-x::-webkit-scrollbar { height: 4px; }
+.scroll-x::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+body.nav-open { overflow: hidden; }
+
+/* Interactive Topbar Search */
+.topbar-search {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--panel-raised); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: var(--radius-sm);
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint);
+  width: 220px; transition: border-color 0.15s, box-shadow 0.15s;
+}
+.topbar-search:focus-within {
+  border-color: var(--amber-dim);
+  box-shadow: 0 0 0 2px var(--amber-glow);
+}
+.topbar-search input {
+  background: transparent; border: none; outline: none;
+  color: var(--text); font-family: var(--font-mono); font-size: 0.78rem;
+  width: 100%;
+}
+.topbar-search input::placeholder { color: var(--text-faint); }
+
 /* Focus states */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
   outline: 2px solid var(--amber); outline-offset: 2px;
@@ -263,9 +294,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     background: var(--panel-raised); border: 1px solid var(--border); color: var(--text);
   }
   .topbar-search { display: none; }
+  .topbar { padding: 0 16px; }
   .content { padding: 20px 16px 90px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
+
 @media (min-width: 640px) and (max-width: 980px) {
-  .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
+
+@media (max-width: 480px) {
+  .topbar-crumb { font-size: 0.72rem; max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn-sm { padding: 6px 10px; font-size: 0.75rem; }
+  .topbar-right { gap: 8px; }
+  .topbar-left { gap: 8px; }
+}
+

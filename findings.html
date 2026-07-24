@@ -55,8 +55,8 @@
     <div class="topbar-crumb">NEXUS <strong>/ Findings</strong></div>
   </div>
   <div class="topbar-right">
-    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search findings...</span></div>
-    <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" placeholder="Search findings..." aria-label="Search findings"></div>
+    <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
     <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
   </div>
 </div>
@@ -79,17 +79,17 @@
 
 <div class="findings-toolbar reveal">
   <div class="filter-tabs">
-    <button class="filter-tab active">All</button>
-    <button class="filter-tab">Agent performance</button>
-    <button class="filter-tab">Prompting</button>
-    <button class="filter-tab">Architecture</button>
-    <button class="filter-tab">Cost & latency</button>
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="performance">Agent performance</button>
+    <button class="filter-tab" data-filter="prompting">Prompting</button>
+    <button class="filter-tab" data-filter="architecture">Architecture</button>
+    <button class="filter-tab" data-filter="cost">Cost & latency</button>
   </div>
   <span class="mono" style="font-size:0.76rem; color:var(--text-faint);">24 findings logged</span>
 </div>
 
 
-  <div class="panel finding-card reveal">
+  <div class="panel finding-card reveal" data-category="cost latency performance">
     <div class="fc-head">
       <div class="fc-meta"><span class="fc-id mono">F-024</span><span class="fc-date">·  Jul 22, 2026</span></div>
       <span class="pill beta">High confidence</span>
@@ -105,7 +105,7 @@
   </div>
 
 
-  <div class="panel finding-card reveal">
+  <div class="panel finding-card reveal" data-category="cost performance prompting">
     <div class="fc-head">
       <div class="fc-meta"><span class="fc-id mono">F-023</span><span class="fc-date">·  Jul 18, 2026</span></div>
       <span class="pill beta">High confidence</span>
@@ -121,7 +121,7 @@
   </div>
 
 
-  <div class="panel finding-card reveal">
+  <div class="panel finding-card reveal" data-category="architecture performance">
     <div class="fc-head">
       <div class="fc-meta"><span class="fc-id mono">F-022</span><span class="fc-date">·  Jul 13, 2026</span></div>
       <span class="pill ">Moderate confidence</span>
@@ -137,7 +137,7 @@
   </div>
 
 
-  <div class="panel finding-card reveal">
+  <div class="panel finding-card reveal" data-category="prompting architecture">
     <div class="fc-head">
       <div class="fc-meta"><span class="fc-id mono">F-021</span><span class="fc-date">·  Jul 7, 2026</span></div>
       <span class="pill beta">High confidence</span>
@@ -153,7 +153,7 @@
   </div>
 
 
-  <div class="panel finding-card reveal">
+  <div class="panel finding-card reveal" data-category="architecture performance">
     <div class="fc-head">
       <div class="fc-meta"><span class="fc-id mono">F-020</span><span class="fc-date">·  Jun 29, 2026</span></div>
       <span class="pill ">Early / low confidence</span>
@@ -167,6 +167,7 @@
     </div>
     <div class="fc-tags"><span class="fc-tag">#retrieval</span><span class="fc-tag">#rag</span><span class="fc-tag">#in-progress</span></div>
   </div>
+
 
 <div style="text-align:center; padding: 20px 0;">
   <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20know%20more%20about%20your%20research%20findings." target="_blank" rel="noopener" class="btn btn-ghost">Ask about our research →</a>

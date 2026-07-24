@@ -55,8 +55,8 @@
     <div class="topbar-crumb">NEXUS <strong>/ Playground</strong></div>
   </div>
   <div class="topbar-right">
-    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search findings...</span></div>
-    <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" placeholder="Search findings..." aria-label="Search findings"></div>
+    <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
     <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
   </div>
 </div>
@@ -91,7 +91,7 @@
   <div class="panel pg-chat reveal">
     <div class="pg-messages" id="pg-messages"></div>
     <div class="pg-input-row">
-      <input type="text" id="pg-input" placeholder="Type a message and press send...">
+      <input type="text" id="pg-input" placeholder="Type a message and press send..." aria-label="Message input">
       <button class="btn btn-primary btn-sm" id="pg-send">Send</button>
     </div>
   </div>
@@ -114,20 +114,28 @@ const demos = {
 };
 
 let currentDemo = 'support';
+let activeTimers = [];
 const messagesEl = document.getElementById('pg-messages');
 const inputEl = document.getElementById('pg-input');
 const sendBtn = document.getElementById('pg-send');
 
+function clearTimers() {
+  activeTimers.forEach(t => clearTimeout(t));
+  activeTimers = [];
+}
+
 function renderDemo(key) {
+  clearTimers();
   messagesEl.innerHTML = '';
   demos[key].forEach((m, i) => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       const div = document.createElement('div');
       div.className = 'pg-msg ' + m.role;
       div.textContent = m.text;
       messagesEl.appendChild(div);
       messagesEl.scrollTop = messagesEl.scrollHeight;
-    }, i * 500);
+    }, i * 400);
+    activeTimers.push(timer);
   });
 }
 
@@ -143,19 +151,21 @@ document.querySelectorAll('.pg-agent-option').forEach(opt => {
 function sendMsg() {
   const val = inputEl.value.trim();
   if (!val) { renderDemo(currentDemo); return; }
+  clearTimers();
   const div = document.createElement('div');
   div.className = 'pg-msg user';
   div.textContent = val;
   messagesEl.appendChild(div);
   messagesEl.scrollTop = messagesEl.scrollHeight;
   inputEl.value = '';
-  setTimeout(() => {
+  const timer = setTimeout(() => {
     const reply = document.createElement('div');
     reply.className = 'pg-msg agent';
     reply.textContent = "This is a scripted playground preview, so responses are limited to the sample script. Message us on WhatsApp for a live, unscripted demo on your own data.";
     messagesEl.appendChild(reply);
     messagesEl.scrollTop = messagesEl.scrollHeight;
-  }, 500);
+  }, 400);
+  activeTimers.push(timer);
 }
 sendBtn.addEventListener('click', sendMsg);
 inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMsg(); });
