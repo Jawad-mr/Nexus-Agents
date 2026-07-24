@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview — Nexus Agents</title>
+<meta name="description" content="Nexus Agents lab overview — active agents, latest AI findings, and system status.">
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/overview.css">
+</head>
+<body>
+<div class="app-shell">
+
+<div class="sb-overlay"></div>
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="mark">N</div>
+    <div class="name">NEXUS<span class="sub">AGENTS · AI LAB</span></div>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Lab</div>
+    <a href="index.html" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg><span>Overview</span></a>
+    <a href="findings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg><span>Findings</span><span class="badge">NEW</span></a>
+    <a href="agents.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Agents</span></a>
+    <a href="playground.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg><span>Playground</span></a>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Product</div>
+    <a href="features.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg><span>Features</span></a>
+    <a href="pricing.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Pricing</span></a>
+    <a href="docs.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span>Docs & API</span></a>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Studio</div>
+    <a href="settings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Settings</span></a>
+    <a href="contact.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><span>Contact</span></a>
+  </div>
+
+  <div class="sb-footer">
+    <div class="sb-status">
+      <div class="dot"></div>
+      <div class="txt"><strong>System nominal</strong>12 agents online</div>
+    </div>
+    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team." target="_blank" rel="noopener" class="sb-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Talk to us</a>
+  </div>
+</aside>
+<div class="main">
+
+<div class="topbar">
+  <div class="topbar-left">
+    <button class="sb-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="topbar-crumb">NEXUS <strong>/ Overview</strong></div>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search findings...</span></div>
+    <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
+  </div>
+</div>
+<div class="content">
+
+<div class="hero-strip reveal">
+  <div class="pill live" style="margin-bottom:14px;"><span class="dot"></span>LIVE — 12 agents running</div>
+  <h1>Welcome back to the lab.</h1>
+  <p>Nexus Agents is where we build, test, and publish findings on applied AI — and ship the agent products that come out of that research.</p>
+</div>
+
+<div class="grid grid-4 reveal" style="margin-bottom:28px;">
+  <div class="panel stat-card">
+    <div class="sc-glow"></div>
+    <div class="sc-label">Active agents</div>
+    <div class="sc-value">12<span class="unit">/ 12</span></div>
+    <div class="sc-trend up">↑ All systems nominal</div>
+  </div>
+  <div class="panel stat-card">
+    <div class="sc-glow"></div>
+    <div class="sc-label">Findings published</div>
+    <div class="sc-value">24</div>
+    <div class="sc-trend up">↑ 3 this month</div>
+  </div>
+  <div class="panel stat-card">
+    <div class="sc-glow"></div>
+    <div class="sc-label">Avg. confidence</div>
+    <div class="sc-value">87<span class="unit">%</span></div>
+    <div class="sc-trend up">↑ 4pt vs last cycle</div>
+  </div>
+  <div class="panel stat-card">
+    <div class="sc-glow"></div>
+    <div class="sc-label">Response time</div>
+    <div class="sc-value">1.2<span class="unit">s avg</span></div>
+    <div class="sc-trend up">↑ Improved 18%</div>
+  </div>
+</div>
+
+<div class="dash-layout">
+  <div>
+    <div class="panel reveal" style="margin-bottom:24px;">
+      <div class="section-head" style="padding:20px 20px 0;">
+        <div>
+          <h3>Latest findings</h3>
+          <p>Research and observations from active experiments.</p>
+        </div>
+        <a href="findings.html" class="btn btn-ghost btn-sm">View all →</a>
+      </div>
+      <div style="padding: 12px 0 4px;">
+        <div class="finding-row">
+          <span class="fr-tag mono">F-024</span>
+          <div class="fr-title">Prompt caching cuts latency 40% on repeated agent calls<span class="fr-excerpt">Observed across three production agents over a two-week window.</span></div>
+          <span class="pill beta">High confidence</span>
+          <span class="fr-date">2 days ago</span>
+        </div>
+        <div class="finding-row">
+          <span class="fr-tag mono">F-023</span>
+          <div class="fr-title">Smaller fine-tuned models outperform general models on narrow tasks<span class="fr-excerpt">Tested against our support-routing agent's real ticket volume.</span></div>
+          <span class="pill beta">High confidence</span>
+          <span class="fr-date">6 days ago</span>
+        </div>
+        <div class="finding-row">
+          <span class="fr-tag mono">F-022</span>
+          <div class="fr-title">Multi-agent handoff loses context past 3 hops without explicit state</div>
+          <span class="pill" style="color:var(--text-dim);">Moderate</span>
+          <span class="fr-date">11 days ago</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-pad reveal">
+      <div class="section-head">
+        <div><h3>Agent fleet</h3><p>The 12 modules currently live in the Nexus Agents suite.</p></div>
+        <a href="agents.html" class="btn btn-ghost btn-sm">View all →</a>
+      </div>
+      <div class="agent-chip-row">
+        <div class="agent-chip"><span class="ac-dot"></span>Support Router</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Lead Qualifier</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Content Drafter</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Data Extractor</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Meeting Summarizer</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Email Triage</div>
+        <div class="agent-chip"><span class="ac-dot"></span>SEO Analyst</div>
+        <div class="agent-chip"><span class="ac-dot"></span>Social Scheduler</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-pad reveal">
+    <h3 style="margin-bottom:16px;">Activity</h3>
+    <div class="activity-item">
+      <div class="activity-dot" style="background:var(--mint);"></div>
+      <div><div class="at-txt">Finding F-024 published to research log</div><div class="at-time">2 DAYS AGO</div></div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot" style="background:var(--amber);"></div>
+      <div><div class="at-txt">Content Drafter agent updated to v2.3</div><div class="at-time">4 DAYS AGO</div></div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot" style="background:var(--mint);"></div>
+      <div><div class="at-txt">Finding F-023 published to research log</div><div class="at-time">6 DAYS AGO</div></div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot" style="background:var(--text-faint);"></div>
+      <div><div class="at-txt">New experiment queued: retrieval latency</div><div class="at-time">8 DAYS AGO</div></div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot" style="background:var(--amber);"></div>
+      <div><div class="at-txt">Meeting Summarizer agent shipped</div><div class="at-time">12 DAYS AGO</div></div>
+    </div>
+    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20see%20the%20full%20research%20and%20activity%20log." target="_blank" rel="noopener" class="btn btn-ghost btn-block" style="margin-top:18px;">Ask about the full log</a>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

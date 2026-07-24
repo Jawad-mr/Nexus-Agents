@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs & API — Nexus Agents</title>
+<meta name="description" content="Nexus Agents API documentation: authentication, calling agents, multi-agent handoff, and webhooks.">
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/inner.css">
+</head>
+<body>
+<div class="app-shell">
+
+<div class="sb-overlay"></div>
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="mark">N</div>
+    <div class="name">NEXUS<span class="sub">AGENTS · AI LAB</span></div>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Lab</div>
+    <a href="index.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg><span>Overview</span></a>
+    <a href="findings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg><span>Findings</span><span class="badge">NEW</span></a>
+    <a href="agents.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Agents</span></a>
+    <a href="playground.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg><span>Playground</span></a>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Product</div>
+    <a href="features.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg><span>Features</span></a>
+    <a href="pricing.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Pricing</span></a>
+    <a href="docs.html" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span>Docs & API</span></a>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Studio</div>
+    <a href="settings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Settings</span></a>
+    <a href="contact.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><span>Contact</span></a>
+  </div>
+
+  <div class="sb-footer">
+    <div class="sb-status">
+      <div class="dot"></div>
+      <div class="txt"><strong>System nominal</strong>12 agents online</div>
+    </div>
+    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team." target="_blank" rel="noopener" class="sb-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Talk to us</a>
+  </div>
+</aside>
+<div class="main">
+
+<div class="topbar">
+  <div class="topbar-left">
+    <button class="sb-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="topbar-crumb">NEXUS <strong>/ Docs</strong></div>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search findings...</span></div>
+    <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
+  </div>
+</div>
+<div class="content">
+
+<div class="section-head reveal">
+  <div>
+    <h1 style="font-size:1.6rem;">Docs &amp; API</h1>
+    <p>Everything needed to integrate a Nexus Agent into your own stack.</p>
+  </div>
+</div>
+
+<div class="docs-layout">
+  <nav class="docs-nav reveal">
+    <a href="#quickstart" class="active">Quickstart</a>
+    <a href="#auth">Authentication</a>
+    <a href="#calling">Calling an agent</a>
+    <a href="#handoff">Multi-agent handoff</a>
+    <a href="#errors">Error handling</a>
+    <a href="#webhooks">Webhooks</a>
+  </nav>
+
+  <div>
+    <div class="panel panel-pad reveal" id="quickstart" style="margin-bottom:20px;">
+      <h3>Quickstart</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">Every agent is called through a single, consistent endpoint. Choose the agent by ID and pass your input as structured JSON.</p>
+      <div class="code-block"><span class="com">// POST to the agent endpoint</span>
+<span class="kw">fetch</span>(<span class="str">"https://api.nexusagents.dev/v1/agents/support-router/run"</span>, {
+  method: <span class="str">"POST"</span>,
+  headers: { <span class="str">"Authorization"</span>: <span class="str">"Bearer YOUR_KEY"</span> },
+  body: JSON.stringify({ input: <span class="str">"My payment failed twice"</span> })
+});</div>
+    </div>
+
+    <div class="panel panel-pad reveal" id="auth" style="margin-bottom:20px;">
+      <h3>Authentication</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">All requests require a bearer token, issued when your plan is set up. Keys are scoped per-agent so you only expose what you need.</p>
+      <div class="code-block"><span class="com">// Header format</span>
+Authorization: Bearer nx_live_xxxxxxxxxxxx</div>
+    </div>
+
+    <div class="panel panel-pad reveal" id="calling" style="margin-bottom:20px;">
+      <h3>Calling an agent</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">Each agent accepts a structured input object specific to its task, and returns a structured response with a confidence score.</p>
+      <div class="code-block">{
+  <span class="str">"output"</span>: <span class="str">"Routed to Billing Support"</span>,
+  <span class="str">"category"</span>: <span class="str">"billing"</span>,
+  <span class="str">"priority"</span>: <span class="str">"high"</span>,
+  <span class="str">"confidence"</span>: 0.94
+}</div>
+    </div>
+
+    <div class="panel panel-pad reveal" id="handoff" style="margin-bottom:20px;">
+      <h3>Multi-agent handoff</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">Pass a shared <code>state</code> object between agent calls to preserve context across a chain — this directly reflects Finding F-022 in our research log.</p>
+      <div class="code-block">{
+  <span class="str">"input"</span>: <span class="str">"..."</span>,
+  <span class="str">"state"</span>: { <span class="str">"thread_id"</span>: <span class="str">"abc123"</span>, <span class="str">"prior_context"</span>: {...} }
+}</div>
+    </div>
+
+    <div class="panel panel-pad reveal" id="errors" style="margin-bottom:20px;">
+      <h3>Error handling</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">Standard HTTP status codes are used throughout. 429 responses include a <code>retry_after</code> field for rate-limited requests.</p>
+    </div>
+
+    <div class="panel panel-pad reveal" id="webhooks">
+      <h3>Webhooks</h3>
+      <p style="margin-top:10px; font-size:0.9rem;">Subscribe to agent completion events to trigger downstream workflows without polling.</p>
+      <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20need%20help%20setting%20up%20the%20API%2Fwebhooks." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top:14px;">Get integration help</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<script src="js/main.js" defer></script>
+</body>
+</html>
