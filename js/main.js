@@ -29,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle?.setAttribute('aria-expanded', 'true');
   }
 
-  toggle?.addEventListener('click', () => {
-    sidebar?.classList.contains('open') ? closeSidebar() : openSidebar();
+  document.querySelectorAll('.sb-toggle, .mbb-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      sidebar?.classList.contains('open') ? closeSidebar() : openSidebar();
+    });
   });
   overlay?.addEventListener('click', closeSidebar);
   document.querySelectorAll('.sidebar a').forEach(a => a.addEventListener('click', closeSidebar));
