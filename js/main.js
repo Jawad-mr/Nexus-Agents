@@ -3,6 +3,22 @@ const WA_NUMBER = "917204351696";
 function waLink(msg) { return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg || "Hi Nexus Agents, I'd like to know more.")}`; }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Theme Manager (Default to rich warm light mode)
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('nexus-theme', theme);
+  }
+  const savedTheme = localStorage.getItem('nexus-theme') || 'light';
+  setTheme(savedTheme);
+
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      setTheme(next);
+    });
+  });
+
   // 1. WhatsApp & Phone link builders
   document.querySelectorAll('[data-wa-msg]').forEach(el => {
     el.setAttribute('href', waLink(el.getAttribute('data-wa-msg')));
