@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" fill="none">
+  <rect x="2" y="6" width="36" height="36" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <path d="M12 32V16L20 25.5V16H28V32L20 22.5V32H12Z" fill="#2563EB"/>
+  <circle cx="12" cy="16" r="2.5" fill="#F8FAFC"/>
+  <circle cx="28" cy="32" r="2.5" fill="#10B981"/>
+  <text x="48" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#F8FAFC" letter-spacing="-0.5">NEXUS</text>
+  <text x="114" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="16" fill="#94A3B8" letter-spacing="-0.5">AGENTS</text>
+  <rect x="48" y="32" width="80" height="1.5" fill="#2563EB"/>
+</svg>

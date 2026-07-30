@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio Settings — Nexus Agents | JSN Creative</title>
-  <meta name="description" content="Manage Nexus Agents studio configuration, notification hooks, and execution fallback rules.">
+  <title>Studio Settings & System Parameters — Nexus Agents | JSN Creative</title>
+  <meta name="description" content="Manage Nexus Agents studio configuration, schema validation strictness, PII redaction settings, and API webhook destinations.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/inner.css">
@@ -76,47 +76,63 @@
 
   <main class="page-wrapper">
     <section class="section" style="background: var(--surface);">
-      <div class="container" style="max-width: 800px;">
+      <div class="container">
         <div class="section-header">
-          <span class="section-tag">Preferences & Security</span>
-          <h1>Studio Configuration</h1>
-          <p class="section-desc">Manage theme options, notification channels, and agent execution policies.</p>
+          <span class="section-tag">Studio Configuration</span>
+          <h1>System & Pipeline Settings</h1>
+          <p class="section-desc">Manage runtime parameters, schema enforcement strictness, fallback triggers, and security controls across your agent fleet.</p>
         </div>
 
-        <div class="card reveal">
+        <div class="card reveal" style="max-width: 840px;">
+          
           <div class="settings-row">
             <div>
-              <h4>Strict JSON Schema Enforcement</h4>
-              <p>Rejects any LLM execution response that fails Zod schema validation.</p>
+              <h4>Strict JSON Schema Validation</h4>
+              <p>Reject agent outputs that fail Zod schema checks automatically before downstream API dispatch.</p>
             </div>
             <div class="toggle on"></div>
           </div>
 
           <div class="settings-row">
             <div>
-              <h4>Automated PII Redaction</h4>
-              <p>Redacts credit cards, SSNs, and passcodes before prompt model evaluation.</p>
+              <h4>Automated PII & Confidential Data Masking</h4>
+              <p>Run NER regex filters to redact sensitive credentials, financial data, and personal identifiers before processing.</p>
             </div>
             <div class="toggle on"></div>
           </div>
 
           <div class="settings-row">
             <div>
-              <h4>Asynchronous Webhook Alerts</h4>
-              <p>Sends real-time HTTP events when an agent pipeline finishes execution.</p>
+              <h4>Multi-Agent Pipeline Event Bus</h4>
+              <p>Allow asynchronous event triggers between Support Router, Lead Qualifier, and Email Triage.</p>
             </div>
             <div class="toggle on"></div>
           </div>
 
           <div class="settings-row">
             <div>
-              <h4>WhatsApp High-Priority Alerts</h4>
-              <p>Forwards urgent execution errors directly to registered WhatsApp number (+91 7204351696).</p>
+              <h4>Prompt Token Caching</h4>
+              <p>Cache static system prompts to reduce pipeline latency and API token consumption.</p>
             </div>
             <div class="toggle on"></div>
           </div>
+
+          <div class="settings-row">
+            <div>
+              <h4>Verbose Execution Logging</h4>
+              <p>Maintain detailed audit trails of candidate agent predictions and confidence scores.</p>
+            </div>
+            <div class="toggle"></div>
+          </div>
+
+          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div style="font-size: 0.82rem; color: var(--text-faint);">Configuration synced with studio API server.</div>
+            <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20need%20help%20with%20studio%20settings." data-wa-msg="Hi Nexus Agents, I need help with studio settings." class="btn btn-primary btn-sm">
+              Save Settings
+            </a>
+          </div>
+
         </div>
-
       </div>
     </section>
   </main>
@@ -145,12 +161,12 @@
           <ul>
             <li><a href="playground.html">Playground</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="docs.html">API Reference</a></li>
-            <li><a href="contact.html">Contact Studio</a></li>
+            <li><a href="docs.html">Docs & API</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>WhatsApp</h5>
+          <h5>WhatsApp First</h5>
           <ul>
             <li><a href="https://wa.me/917204351696" target="_blank" rel="noopener">WhatsApp Direct</a></li>
           </ul>
@@ -158,7 +174,7 @@
       </div>
       <div class="footer-bottom">
         <div>© 2026 Nexus Agents / JSN CREATIVE.</div>
-        <div>Config System Nominal</div>
+        <div>Studio Configuration Settings v2.0</div>
       </div>
     </div>
   </footer>

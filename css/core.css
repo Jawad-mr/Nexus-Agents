@@ -1,14 +1,13 @@
 /* ===================================================================
-   NEXUS AGENTS — SENIOR FRONTEND RESPONSIVE DESIGN SYSTEM
+   NEXUS AGENTS — CLEAN AI SAAS DESIGN SYSTEM
+   Visual standard: Linear / Vercel / Retool style restraint & clarity
    Supports: 320px, 375px, 390px, 414px, 480px, 640px, 768px, 820px, 
              1024px, 1280px, 1440px, 1536px, 1920px+
-   Visual Standard: Linear / Vercel / Retool SaaS Grade
    =================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Color Palette — Calm Dark Slate + Precision Cobalt Accent */
   --bg: #090D14;
   --surface: #0F172A;
   --surface-raised: #1E293B;
@@ -35,11 +34,9 @@
   --amber: #F59E0B;
   --amber-soft: rgba(245, 158, 11, 0.12);
   
-  /* Typography */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
   
-  /* Metrics & Spacing */
   --header-height: 68px;
   --max-width: 1280px;
   --radius-sm: 6px;
@@ -50,7 +47,6 @@
   --touch-target-min: 44px;
 }
 
-/* Light Theme Variables */
 [data-theme="light"] {
   --bg: #F8FAFC;
   --surface: #FFFFFF;
@@ -75,7 +71,6 @@
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* CSS Reset & Defensiveness against Horizontal Scroll */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -103,13 +98,11 @@ body {
   width: 100%;
 }
 
-/* Accessible Keyboard Focus Rings */
 *:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-/* Fluid Typography Scaling */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   color: var(--text);
@@ -160,7 +153,6 @@ img, svg {
   font-family: var(--font-mono);
 }
 
-/* Base Layout Containers */
 .page-wrapper {
   flex-grow: 1;
   display: flex;
@@ -212,7 +204,6 @@ img, svg {
   color: var(--text-muted);
 }
 
-/* Sticky Header Navigation */
 .site-header {
   position: sticky;
   top: 0;
@@ -333,7 +324,6 @@ img, svg {
   flex-shrink: 0;
 }
 
-/* Mobile Slide-Over Navigation Drawer */
 .drawer-overlay {
   position: fixed;
   inset: 0;
@@ -417,7 +407,6 @@ img, svg {
   font-weight: 600;
 }
 
-/* Flexible Grid System with Equal Height Cards */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -452,7 +441,6 @@ img, svg {
   background: var(--surface-raised);
 }
 
-/* Button System (All Touch Targets >= 44px) */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -523,7 +511,6 @@ img, svg {
   font-size: 0.98rem;
 }
 
-/* Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -561,7 +548,6 @@ img, svg {
   border: 1px solid var(--border);
 }
 
-/* Code Blocks & Tables — Touch Safe Horizontal Scroll */
 .code-box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -586,7 +572,6 @@ img, svg {
 .code-num { color: #F59E0B; }
 .code-com { color: var(--text-faint); }
 
-/* Forms */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -617,7 +602,6 @@ img, svg {
   resize: vertical;
 }
 
-/* Footer */
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -680,7 +664,6 @@ img, svg {
   gap: 12px;
 }
 
-/* Scroll Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -692,20 +675,15 @@ img, svg {
   transform: translateY(0);
 }
 
-/* Comprehensive Responsive Breakpoints */
-
-/* 1. Ultra-Wide Displays (1920px+) */
 @media (min-width: 1920px) {
   :root { --max-width: 1480px; }
   body { font-size: 1.05rem; }
 }
 
-/* 2. Standard Desktop / Laptops (1025px - 1439px) */
 @media (max-width: 1279px) {
   .grid-4 { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* 3. Laptops & Small Desktops (1024px) */
 @media (max-width: 1024px) {
   .nav-menu { display: none; }
   .mobile-toggle { display: flex; }
@@ -714,13 +692,11 @@ img, svg {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* 4. Tablets & iPad Air/Pro (768px - 1023px) */
 @media (max-width: 820px) {
   .header-actions .system-status-pill { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
-/* 5. Mobile & Small Screens (< 640px) */
 @media (max-width: 640px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -728,7 +704,6 @@ img, svg {
   .btn-lg { width: 100%; }
 }
 
-/* 6. Ultra-Small Phones (320px - 374px) */
 @media (max-width: 374px) {
   .container { padding: 0 12px; }
   .brand span { font-size: 0.9rem; }
@@ -736,7 +711,6 @@ img, svg {
   .card { padding: 16px; }
 }
 
-/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
