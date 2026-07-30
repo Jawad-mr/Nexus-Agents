@@ -1,5 +1,5 @@
 /* ===================================================================
-   NEXUS AGENTS — CLEAN AI SAAS DESIGN SYSTEM
+   NEXUS AGENTS — CLEAN AI SAAS DESIGN SYSTEM & SAFETY RULES
    Visual standard: Linear / Vercel / Retool style restraint & clarity
    Supports: 320px, 375px, 390px, 414px, 480px, 640px, 768px, 820px, 
              1024px, 1280px, 1440px, 1536px, 1920px+
@@ -98,6 +98,19 @@ body {
   width: 100%;
 }
 
+/* Strict SVG sizing safety net to prevent giant unstyled icons */
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+svg:not([width]) {
+  width: 20px;
+  height: 20px;
+}
+
 *:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -141,12 +154,6 @@ button {
 
 ul, ol {
   list-style: none;
-}
-
-img, svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 .mono, .code-font {
@@ -204,6 +211,7 @@ img, svg {
   color: var(--text-muted);
 }
 
+/* Site Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -674,6 +682,13 @@ img, svg {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fallback styles for legacy dashboard classnames in case of browser/Vercel cache */
+.app-shell { display: flex; flex-direction: column; min-height: 100vh; }
+.sidebar { display: none !important; }
+.sb-overlay { display: none !important; }
+.mobile-bottom-bar { display: none !important; }
+.topbar { display: none !important; }
 
 @media (min-width: 1920px) {
   :root { --max-width: 1480px; }
