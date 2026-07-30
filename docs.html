@@ -1,231 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Documentation & Integration Guide — Nexus Agents | JSN Creative</title>
-  <meta name="description" content="Developer API documentation for Nexus Agents. Integrate purpose-built agents into your tech stack via REST API, Webhooks, and JavaScript SDK.">
+  <title>Docs & API — Nexus Agents</title>
+  <meta name="description"
+    content="Nexus Agents API documentation: authentication, calling agents, multi-agent handoff, and webhooks.">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/inner.css">
 </head>
+
 <body>
+  <div class="app-shell">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="brand">
-        <div class="brand-icon">N</div>
-        <span>NEXUS AGENTS</span>
-        <span class="brand-tag">JSN CREATIVE</span>
-      </a>
-
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agents.html" class="nav-link">Agents Fleet</a>
-        <a href="findings.html" class="nav-link">Findings</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="playground.html" class="nav-link">Playground</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="docs.html" class="nav-link active">Docs & API</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="system-status-pill">
-          <span class="status-dot"></span>
-          <span>System Nominal</span>
-        </div>
-        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-primary btn-sm">Deploy Agent</a>
-        <button class="mobile-toggle" aria-label="Open Navigation Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+    <div class="sb-overlay"></div>
+    <aside class="sidebar">
+      <div class="sb-brand">
+        <div class="mark">N</div>
+        <div class="name">NEXUS<span class="sub">CUSTOM AI DEVELOPMENT</span></div>
       </div>
-    </div>
-  </header>
 
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <div class="brand">
-        <div class="brand-icon">N</div>
-        <span>NEXUS AGENTS</span>
+      <div class="sb-section">
+        <div class="sb-label">Lab</div>
+        <a href="index.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z" />
+          </svg><span>Overview</span></a>
+        <a href="findings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z" />
+          </svg><span>Findings</span><span class="badge">NEW</span></a>
+        <a href="agents.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg><span>Agents</span></a>
+        <a href="playground.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 3l14 9-14 9V3z" />
+          </svg><span>Playground</span></a>
       </div>
-      <button class="drawer-close" aria-label="Close Navigation Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <nav class="drawer-links">
-      <a href="index.html" class="drawer-link">Overview</a>
-      <a href="agents.html" class="drawer-link">Agents Fleet</a>
-      <a href="findings.html" class="drawer-link">Findings</a>
-      <a href="features.html" class="drawer-link">Features</a>
-      <a href="playground.html" class="drawer-link">Playground</a>
-      <a href="pricing.html" class="drawer-link">Pricing</a>
-      <a href="docs.html" class="drawer-link active">Docs & API</a>
-      <a href="contact.html" class="drawer-link">Contact</a>
-      <a href="settings.html" class="drawer-link">Settings</a>
-    </nav>
-    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
-      <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-whatsapp" style="width: 100%;">
-        Talk on WhatsApp
-      </a>
-    </div>
-  </aside>
 
-  <main class="page-wrapper">
-    <section class="section" style="background: var(--surface);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Developer Hub</span>
-          <h1>Nexus Agents API Reference</h1>
-          <p class="section-desc">Integrate purpose-built autonomous agents directly into your backend architecture, CRM, or custom SaaS workflows using our REST API or JavaScript SDK.</p>
+      <div class="sb-section">
+        <div class="sb-label">Product</div>
+        <a href="features.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+          </svg><span>Features</span></a>
+        <a href="pricing.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+          </svg><span>Pricing</span></a>
+        <a href="docs.html" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+          </svg><span>Docs & API</span></a>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Studio</div>
+        <a href="settings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg><span>Settings</span></a>
+        <a href="contact.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg><span>Contact</span></a>
+      </div>
+
+      <div class="sb-footer">
+        <div class="sb-status">
+          <div class="dot"></div>
+          <div class="txt"><strong>System nominal</strong>12 agents online</div>
+        </div>
+        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team."
+          target="_blank" rel="noopener" class="sb-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg> Talk to us</a>
+      </div>
+    </aside>
+    <div class="main">
+
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="sb-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg></button>
+          <div class="topbar-crumb">NEXUS <strong>/ Docs</strong></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.3-4.3" />
+            </svg><input type="text" placeholder="Search findings..." aria-label="Search findings"></div>
+          <button class="topbar-icon-btn theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme"><svg
+              class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            </svg><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg></button>
+          <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 01-3.46 0" />
+            </svg></button>
+          <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank"
+            rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
+        </div>
+      </div>
+      <div class="content">
+
+        <div class="section-head reveal">
+          <div>
+            <h1 style="font-size:1.6rem;">Docs &amp; API</h1>
+            <p>Everything needed to integrate a Nexus Agent into your own stack.</p>
+          </div>
         </div>
 
-        <div class="docs-grid">
-
-          <!-- Docs Sidebar Navigation -->
-          <nav class="docs-sidebar">
-            <a href="#authentication" class="docs-nav-item active">Authentication</a>
-            <a href="#support-router-api" class="docs-nav-item">Support Router API</a>
-            <a href="#data-extractor-api" class="docs-nav-item">Data Extractor API</a>
-            <a href="#webhooks" class="docs-nav-item">Webhooks & Events</a>
-            <a href="#errors" class="docs-nav-item">Error Codes</a>
+        <div class="docs-layout">
+          <nav class="docs-nav reveal">
+            <a href="#quickstart" class="active">Quickstart</a>
+            <a href="#auth">Authentication</a>
+            <a href="#calling">Calling an agent</a>
+            <a href="#handoff">Multi-agent handoff</a>
+            <a href="#errors">Error handling</a>
+            <a href="#webhooks">Webhooks</a>
           </nav>
 
-          <!-- Docs Main Content -->
-          <div class="docs-content">
-
-            <!-- Section 1: Authentication -->
-            <div id="authentication" class="docs-block">
-              <h3>1. Authentication</h3>
-              <p>Authenticate your HTTP API requests by providing your secret API key in the request `Authorization` header.</p>
-              <div class="code-box">
-                <pre><span class="code-com"># Include Bearer token in all HTTP headers</span>
-Authorization: Bearer nxs_live_9812401928401924</pre>
+          <div>
+            <div class="panel panel-pad reveal" id="quickstart" style="margin-bottom:20px;">
+              <h3>Quickstart</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">Every agent is called through a single, consistent endpoint.
+                Choose the agent by ID and pass your input as structured JSON.</p>
+              <div class="code-block"><span class="com">// POST to the agent endpoint</span>
+                <span class="kw">fetch</span>(<span
+                  class="str">"https://api.nexusagents.dev/v1/agents/support-router/run"</span>, {
+                method: <span class="str">"POST"</span>,
+                headers: { <span class="str">"Authorization"</span>: <span class="str">"Bearer YOUR_KEY"</span> },
+                body: JSON.stringify({ input: <span class="str">"My payment failed twice"</span> })
+                });
               </div>
             </div>
 
-            <!-- Section 2: Support Router API -->
-            <div id="support-router-api" class="docs-block">
-              <h3>2. Support Router Endpoint (`POST /v1/agents/support-router/run`)</h3>
-              <p>Triggers intent classification, urgency scoring, and target queue determination for an incoming ticket payload.</p>
-              
-              <h4>cURL Example</h4>
-              <div class="code-box">
-                <pre>curl -X POST https://api.nexusagents.com/v1/agents/support-router/run \
-  -H <span class="code-str">"Authorization: Bearer nxs_live_9812401928401924"</span> \
-  -H <span class="code-str">"Content-Type: application/json"</span> \
-  -d <span class="code-str">'{
-    "ticket_id": "TICK-9042",
-    "customer_id": "cust_44102",
-    "raw_text": "I was billed twice for my Growth Tier subscription renewal yesterday."
-  }'</span></pre>
-              </div>
+            <div class="panel panel-pad reveal" id="auth" style="margin-bottom:20px;">
+              <h3>Authentication</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">All requests require a bearer token, issued when your plan
+                is set up. Keys are scoped per-agent so you only expose what you need.</p>
+              <div class="code-block"><span class="com">// Header format</span>
+                Authorization: Bearer nx_live_xxxxxxxxxxxx</div>
+            </div>
 
-              <h4 style="margin-top: 20px;">200 OK Response Output</h4>
-              <div class="code-box">
-                <pre>{
-  <span class="code-kw">"execution_id"</span>: <span class="code-str">"exec_8819024"</span>,
-  <span class="code-kw">"agent"</span>: <span class="code-str">"support-router"</span>,
-  <span class="code-kw">"status"</span>: <span class="code-str">"success"</span>,
-  <span class="code-kw">"latency_ms"</span>: <span class="code-num">184</span>,
-  <span class="code-kw">"data"</span>: {
-    <span class="code-kw">"intent"</span>: <span class="code-str">"Billing Duplicate Charge"</span>,
-    <span class="code-kw">"priority"</span>: <span class="code-str">"HIGH"</span>,
-    <span class="code-kw">"target_department"</span>: <span class="code-str">"Finance Tier 2"</span>,
-    <span class="code-kw">"confidence"</span>: <span class="code-num">0.994</span>,
-    <span class="code-kw">"suggested_reply"</span>: <span class="code-str">"Issue refund for transaction TX-88201."</span>
-  }
-}</pre>
+            <div class="panel panel-pad reveal" id="calling" style="margin-bottom:20px;">
+              <h3>Calling an agent</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">Each agent accepts a structured input object specific to its
+                task, and returns a structured response with a confidence score.</p>
+              <div class="code-block">{
+                <span class="str">"output"</span>: <span class="str">"Routed to Billing Support"</span>,
+                <span class="str">"category"</span>: <span class="str">"billing"</span>,
+                <span class="str">"priority"</span>: <span class="str">"high"</span>,
+                <span class="str">"confidence"</span>: 0.94
+                }
               </div>
             </div>
 
-            <!-- Section 3: Data Extractor API -->
-            <div id="data-extractor-api" class="docs-block">
-              <h3>3. JavaScript SDK Integration</h3>
-              <p>Install the official Nexus Agents SDK using npm or yarn for type-safe execution in Node.js applications.</p>
-              <div class="code-box">
-                <pre><span class="code-com">// Node.js / TypeScript Example</span>
-<span class="code-kw">import</span> { NexusClient } <span class="code-kw">from</span> <span class="code-str">'@nexus-agents/sdk'</span>;
-
-<span class="code-kw">const</span> nexus = <span class="code-kw">new</span> NexusClient({ apiKey: process.env.NEXUS_API_KEY });
-
-<span class="code-kw">const</span> result = <span class="code-kw">await</span> nexus.agents.dataExtractor.extract({
-  documentUrl: <span class="code-str">'https://storage.acme.com/invoices/inv_2026.pdf'</span>,
-  schema: <span class="code-str">'invoice-v1'</span>
-});
-
-console.log(result.data.extracted_entities);</pre>
+            <div class="panel panel-pad reveal" id="handoff" style="margin-bottom:20px;">
+              <h3>Multi-agent handoff</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">Pass a shared <code>state</code> object between agent calls
+                to preserve context across a chain — this directly reflects Finding F-022 in our research log.</p>
+              <div class="code-block">{
+                <span class="str">"input"</span>: <span class="str">"..."</span>,
+                <span class="str">"state"</span>: { <span class="str">"thread_id"</span>: <span
+                  class="str">"abc123"</span>, <span class="str">"prior_context"</span>: {...} }
+                }
               </div>
             </div>
 
-            <!-- Section 4: Webhooks -->
-            <div id="webhooks" class="docs-block">
-              <h3>4. Webhooks & Asynchronous Event Subscriptions</h3>
-              <p>Configure webhook endpoints in your dashboard to receive real-time execution events for long-running agent tasks.</p>
-              <div class="code-box">
-                <pre><span class="code-com">// Webhook Event Payload: agent.execution.completed</span>
-{
-  <span class="code-kw">"event"</span>: <span class="code-str">"agent.execution.completed"</span>,
-  <span class="code-kw">"timestamp"</span>: <span class="code-str">"2026-07-30T14:50:00Z"</span>,
-  <span class="code-kw">"agent"</span>: <span class="code-str">"lead-qualifier"</span>,
-  <span class="code-kw">"payload"</span>: {
-    <span class="code-kw">"lead_score"</span>: <span class="code-num">95</span>,
-    <span class="code-kw">"qualification"</span>: <span class="code-str">"Enterprise Target"</span>
-  }
-}</pre>
-              </div>
+            <div class="panel panel-pad reveal" id="errors" style="margin-bottom:20px;">
+              <h3>Error handling</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">Standard HTTP status codes are used throughout. 429
+                responses include a <code>retry_after</code> field for rate-limited requests.</p>
             </div>
 
+            <div class="panel panel-pad reveal" id="webhooks">
+              <h3>Webhooks</h3>
+              <p style="margin-top:10px; font-size:0.9rem;">Subscribe to agent completion events to trigger downstream
+                workflows without polling.</p>
+              <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20need%20help%20setting%20up%20the%20API%2Fwebhooks."
+                target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top:14px;">Get integration
+                help</a>
+            </div>
           </div>
+        </div>
 
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <div class="brand-icon">N</div>
-            <span>NEXUS AGENTS</span>
-          </div>
-          <p>AI agent products and research studio under <strong>JSN CREATIVE</strong>.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Developer Links</h5>
-          <ul>
-            <li><a href="docs.html">API Reference</a></li>
-            <li><a href="playground.html">Sandbox</a></li>
-            <li><a href="features.html">Architecture</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Platform</h5>
-          <ul>
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="agents.html">Agents Fleet</a></li>
-            <li><a href="findings.html">Findings</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>API Support</h5>
-          <ul>
-            <li><a href="https://wa.me/917204351696" target="_blank" rel="noopener">WhatsApp Dev Support</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© 2026 Nexus Agents / JSN CREATIVE.</div>
-        <div>API v1.4 Documentation</div>
       </div>
     </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  </div>
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <a href="index.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z" />
+      </svg><span>Overview</span></a>
+    <a href="findings.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z" />
+      </svg><span>Findings</span><span class="mbb-badge">NEW</span></a>
+    <a href="agents.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3" />
+        <path
+          d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+      </svg><span>Agents</span></a>
+    <a href="playground.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 3l14 9-14 9V3z" />
+      </svg><span>Playground</span></a>
+    <button class="mbb-item mbb-toggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg><span>Menu</span></button>
+  </nav>
+  <script src="js/main.js" defer></script>
 </body>
+
 </html>

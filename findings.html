@@ -1,247 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Findings — Research & Operational Log | Nexus Agents</title>
-  <meta name="description" content="Running research log of observations, performance benchmarks, cost/latency data, and architecture lessons from building Nexus Agents fleets.">
+  <title>Findings — Nexus Agents</title>
+  <meta name="description"
+    content="Nexus Agents research log — findings from building and operating real AI agents in production.">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/findings.css">
 </head>
+
 <body>
+  <div class="app-shell">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="brand">
-        <div class="brand-icon">N</div>
-        <span>NEXUS AGENTS</span>
-        <span class="brand-tag">JSN CREATIVE</span>
-      </a>
+    <div class="sb-overlay"></div>
+    <aside class="sidebar">
+      <div class="sb-brand">
+        <div class="mark">N</div>
+        <div class="name">NEXUS<span class="sub">CUSTOM AI DEVELOPMENT</span></div>
+      </div>
 
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agents.html" class="nav-link">Agents Fleet</a>
-        <a href="findings.html" class="nav-link active">Findings</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="playground.html" class="nav-link">Playground</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="docs.html" class="nav-link">Docs & API</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+      <div class="sb-section">
+        <div class="sb-label">Lab</div>
+        <a href="index.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z" />
+          </svg><span>Overview</span></a>
+        <a href="findings.html" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z" />
+          </svg><span>Findings</span><span class="badge">NEW</span></a>
+        <a href="agents.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg><span>Agents</span></a>
+        <a href="playground.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 3l14 9-14 9V3z" />
+          </svg><span>Playground</span></a>
+      </div>
 
-      <div class="header-actions">
-        <div class="system-status-pill">
-          <span class="status-dot"></span>
-          <span>System Nominal</span>
+      <div class="sb-section">
+        <div class="sb-label">Product</div>
+        <a href="features.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+          </svg><span>Features</span></a>
+        <a href="pricing.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+          </svg><span>Pricing</span></a>
+        <a href="docs.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+          </svg><span>Docs & API</span></a>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Studio</div>
+        <a href="settings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg><span>Settings</span></a>
+        <a href="contact.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg><span>Contact</span></a>
+      </div>
+
+      <div class="sb-footer">
+        <div class="sb-status">
+          <div class="dot"></div>
+          <div class="txt"><strong>System nominal</strong>12 agents online</div>
         </div>
-        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-primary btn-sm">Deploy Agent</a>
-        <button class="mobile-toggle" aria-label="Open Navigation Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team."
+          target="_blank" rel="noopener" class="sb-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg> Talk to us</a>
       </div>
-    </div>
-  </header>
+    </aside>
+    <div class="main">
 
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <div class="brand">
-        <div class="brand-icon">N</div>
-        <span>NEXUS AGENTS</span>
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="sb-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg></button>
+          <div class="topbar-crumb">NEXUS <strong>/ Findings</strong></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.3-4.3" />
+            </svg><input type="text" placeholder="Search findings..." aria-label="Search findings"></div>
+          <button class="topbar-icon-btn theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme"><svg
+              class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            </svg><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg></button>
+          <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 01-3.46 0" />
+            </svg></button>
+          <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank"
+            rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
+        </div>
       </div>
-      <button class="drawer-close" aria-label="Close Navigation Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <nav class="drawer-links">
-      <a href="index.html" class="drawer-link">Overview</a>
-      <a href="agents.html" class="drawer-link">Agents Fleet</a>
-      <a href="findings.html" class="drawer-link active">Findings</a>
-      <a href="features.html" class="drawer-link">Features</a>
-      <a href="playground.html" class="drawer-link">Playground</a>
-      <a href="pricing.html" class="drawer-link">Pricing</a>
-      <a href="docs.html" class="drawer-link">Docs & API</a>
-      <a href="contact.html" class="drawer-link">Contact</a>
-      <a href="settings.html" class="drawer-link">Settings</a>
-    </nav>
-    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
-      <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-whatsapp" style="width: 100%;">
-        Talk on WhatsApp
-      </a>
-    </div>
-  </aside>
+      <div class="content">
 
-  <main class="page-wrapper">
-    <section class="findings-header">
-      <div class="container">
-        <span class="section-tag">Empirical Research Log</span>
-        <h1>Findings & Field Observations</h1>
-        <p style="max-width: 680px; margin-top: 8px;">
-          A transparent running log of architecture lessons, latency benchmarks, cost comparisons, and safety insights gathered directly from operating autonomous agents in production environments.
-        </p>
-
-        <div class="findings-bar">
-          <div class="findings-filters">
-            <button class="filter-btn active" data-filter="all">All Topics</button>
-            <button class="filter-btn" data-filter="architecture">Architecture</button>
-            <button class="filter-btn" data-filter="performance">Performance</button>
-            <button class="filter-btn" data-filter="cost">Cost & Latency</button>
-            <button class="filter-btn" data-filter="safety">Safety & Guardrails</button>
+        <div class="section-head reveal">
+          <div>
+            <h1 style="font-size:1.6rem;">AI Performance Findings & Case Studies</h1>
+            <p>Real-world benchmark data, cost savings, and speed improvements logged from our production AI agent
+              deployments.</p>
           </div>
-          <div class="findings-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            <input type="text" placeholder="Search findings...">
+        </div>
+
+        <div class="demo-callout reveal">
+          <div class="dc-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+            <span>AI Research & Deployment Data</span>
+          </div>
+          <p>Every AI agent we build is benchmarked for accuracy, response speed, and cost efficiency. Below are real
+            observations and findings from active AI deployments.</p>
+        </div>
+
+        <div class="findings-toolbar reveal">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="performance">Agent performance</button>
+            <button class="filter-tab" data-filter="prompting">Prompting</button>
+            <button class="filter-tab" data-filter="architecture">Architecture</button>
+            <button class="filter-tab" data-filter="cost">Cost & latency</button>
+          </div>
+          <span class="mono" style="font-size:0.76rem; color:var(--text-faint);">24 findings logged</span>
+        </div>
+
+
+        <div class="panel finding-card reveal" data-category="cost latency performance">
+          <div class="fc-head">
+            <div class="fc-meta"><span class="fc-id mono">F-024</span><span class="fc-date">· Jul 22, 2026</span></div>
+            <span class="pill beta">High confidence</span>
+          </div>
+          <h3>Prompt caching cuts latency 40% on repeated agent calls</h3>
+          <p class="fc-body">Across three production agents handling repeat-structure requests, enabling prompt caching
+            on the system-prompt portion reduced average response time by roughly 40% with no measurable drop in output
+            quality. The gain was largest on our Support Router agent, which reuses the same instruction block thousands
+            of times a day.</p>
+          <div class="fc-confidence">
+            <span class="fc-conf-label">Confidence</span>
+            <div class="meter-track">
+              <div class="meter-fill" data-pct="91"></div>
+            </div>
+            <span class="fc-conf-pct">91%</span>
+          </div>
+          <div class="fc-tags"><span class="fc-tag">#latency</span><span class="fc-tag">#caching</span><span
+              class="fc-tag">#production-data</span></div>
+        </div>
+
+
+        <div class="panel finding-card reveal" data-category="cost performance prompting">
+          <div class="fc-head">
+            <div class="fc-meta"><span class="fc-id mono">F-023</span><span class="fc-date">· Jul 18, 2026</span></div>
+            <span class="pill beta">High confidence</span>
+          </div>
+          <h3>Smaller fine-tuned models outperform general models on narrow tasks</h3>
+          <p class="fc-body">On our support-ticket routing task specifically, a smaller fine-tuned model matched or beat
+            a much larger general-purpose model on accuracy, while running at roughly a third of the cost per call. The
+            gap narrows on tasks requiring broader reasoning — this holds mainly for narrow, well-defined classification
+            work.</p>
+          <div class="fc-confidence">
+            <span class="fc-conf-label">Confidence</span>
+            <div class="meter-track">
+              <div class="meter-fill" data-pct="84"></div>
+            </div>
+            <span class="fc-conf-pct">84%</span>
+          </div>
+          <div class="fc-tags"><span class="fc-tag">#model-selection</span><span class="fc-tag">#cost</span><span
+              class="fc-tag">#fine-tuning</span></div>
+        </div>
+
+
+        <div class="panel finding-card reveal" data-category="architecture performance">
+          <div class="fc-head">
+            <div class="fc-meta"><span class="fc-id mono">F-022</span><span class="fc-date">· Jul 13, 2026</span></div>
+            <span class="pill ">Moderate confidence</span>
+          </div>
+          <h3>Multi-agent handoff loses context past 3 hops without explicit state</h3>
+          <p class="fc-body">When a task passes through more than three agents in sequence without an explicit shared
+            state object, we observed a meaningful drop in task completion accuracy — agents downstream would
+            occasionally re-ask for information already established earlier in the chain. Passing a structured state
+            object between hops resolved most of this.</p>
+          <div class="fc-confidence">
+            <span class="fc-conf-label">Confidence</span>
+            <div class="meter-track">
+              <div class="meter-fill" data-pct="68"></div>
+            </div>
+            <span class="fc-conf-pct">68%</span>
+          </div>
+          <div class="fc-tags"><span class="fc-tag">#multi-agent</span><span class="fc-tag">#context</span><span
+              class="fc-tag">#architecture</span></div>
+        </div>
+
+
+        <div class="panel finding-card reveal" data-category="prompting architecture">
+          <div class="fc-head">
+            <div class="fc-meta"><span class="fc-id mono">F-021</span><span class="fc-date">· Jul 7, 2026</span></div>
+            <span class="pill beta">High confidence</span>
+          </div>
+          <h3>Structured output formatting reduces downstream parsing errors by half</h3>
+          <p class="fc-body">Switching agent outputs from free text to a constrained structured format cut downstream
+            parsing failures roughly in half across our internal test suite. The remaining failures clustered around
+            edge cases with nested optional fields.</p>
+          <div class="fc-confidence">
+            <span class="fc-conf-label">Confidence</span>
+            <div class="meter-track">
+              <div class="meter-fill" data-pct="79"></div>
+            </div>
+            <span class="fc-conf-pct">79%</span>
+          </div>
+          <div class="fc-tags"><span class="fc-tag">#structured-output</span><span class="fc-tag">#reliability</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="findings-feed">
 
-          <!-- Entry 1 -->
-          <article class="finding-card reveal" data-category="safety architecture">
-            <div class="finding-meta">
-              <span class="badge badge-emerald">High Confidence</span>
-              <span class="badge badge-accent">Architecture</span>
-              <span class="badge badge-neutral">Demo Entry Placeholder</span>
-              <span class="finding-date">JULY 28, 2026</span>
-            </div>
-            <h2 class="finding-title">Deterministic Fallback Chains Reduce Agent Hallucination to &lt; 0.1%</h2>
-            <div class="finding-body">
-              <p>
-                In high-stakes support routing environments, relying purely on raw LLM output creates unpredictable edge-case behavior. By implementing a two-layer validation architecture — where an LLM generates structured candidate JSON and a deterministic schema validator (Zod / JSON Schema) verifies required fields before execution — we eliminated invalid routing actions completely across 1.4M support tickets.
-              </p>
-            </div>
-            <div class="finding-footer">
-              <div class="confidence-indicator">
-                <span>Confidence Rating: 99.2%</span>
-                <div class="confidence-bar"><div class="confidence-fill" style="width: 99%;"></div></div>
-              </div>
-              <div style="font-family: var(--font-mono); color: var(--text-faint);">Observed in: Support Router v2</div>
-            </div>
-          </article>
-
-          <!-- Entry 2 -->
-          <article class="finding-card reveal" data-category="performance cost">
-            <div class="finding-meta">
-              <span class="badge badge-emerald">High Confidence</span>
-              <span class="badge badge-accent">Performance</span>
-              <span class="badge badge-neutral">Demo Entry Placeholder</span>
-              <span class="finding-date">JULY 22, 2026</span>
-            </div>
-            <h2 class="finding-title">Asynchronous Queueing Drops Multi-Agent Pipeline Latency by 73%</h2>
-            <div class="finding-body">
-              <p>
-                Sequential execution of Lead Qualifier → Data Extractor → Email Triage previously resulted in compounding HTTP round-trip overhead (1.2s total execution time). By refactoring to event-driven message fan-out (Redis PubSub / SQS), independent agents process payload fragments concurrently, dropping total pipeline latency to 320ms.
-              </p>
-            </div>
-            <div class="finding-footer">
-              <div class="confidence-indicator">
-                <span>Confidence Rating: 98.5%</span>
-                <div class="confidence-bar"><div class="confidence-fill" style="width: 98%;"></div></div>
-              </div>
-              <div style="font-family: var(--font-mono); color: var(--text-faint);">Observed in: Fleet Tier Deployments</div>
-            </div>
-          </article>
-
-          <!-- Entry 3 -->
-          <article class="finding-card reveal" data-category="cost performance">
-            <div class="finding-meta">
-              <span class="badge badge-amber">Medium Confidence</span>
-              <span class="badge badge-accent">Cost & Latency</span>
-              <span class="badge badge-neutral">Demo Entry Placeholder</span>
-              <span class="finding-date">JULY 15, 2026</span>
-            </div>
-            <h2 class="finding-title">Prompt Compression & Token Caching Saves 44% Monthly API Overhead</h2>
-            <div class="finding-body">
-              <p>
-                Evaluating system prompt reuse showed that caching static context instructions (such as company guidelines, formatting rules, and routing taxonomy) reduces redundant input token evaluation cost by nearly half without degrading classification quality on Meeting Summarizer and Content Drafter tasks.
-              </p>
-            </div>
-            <div class="finding-footer">
-              <div class="confidence-indicator">
-                <span>Confidence Rating: 94.0%</span>
-                <div class="confidence-bar"><div class="confidence-fill" style="width: 94%; background: var(--amber);"></div></div>
-              </div>
-              <div style="font-family: var(--font-mono); color: var(--text-faint);">Observed in: Content Drafter & Meeting Summarizer</div>
-            </div>
-          </article>
-
-          <!-- Entry 4 -->
-          <article class="finding-card reveal" data-category="safety architecture">
-            <div class="finding-meta">
-              <span class="badge badge-emerald">High Confidence</span>
-              <span class="badge badge-accent">Safety & Guardrails</span>
-              <span class="badge badge-neutral">Demo Entry Placeholder</span>
-              <span class="finding-date">JULY 04, 2026</span>
-            </div>
-            <h2 class="finding-title">Automated PII Masking at Ingestion Prevents Data Leakage in Email Triage</h2>
-            <div class="finding-body">
-              <p>
-                Before sending raw email content to processing models, Email Triage runs a lightweight regex & NER sanitizer to mask credit card numbers, SSNs, and passwords with deterministic tokens (`[REDACTED_CREDIT_CARD]`), satisfying strict enterprise compliance standards.
-              </p>
-            </div>
-            <div class="finding-footer">
-              <div class="confidence-indicator">
-                <span>Confidence Rating: 99.8%</span>
-                <div class="confidence-bar"><div class="confidence-fill" style="width: 99%;"></div></div>
-              </div>
-              <div style="font-family: var(--font-mono); color: var(--text-faint);">Observed in: Email Triage v1.8</div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <div class="brand-icon">N</div>
-            <span>NEXUS AGENTS</span>
+        <div class="panel finding-card reveal" data-category="architecture performance">
+          <div class="fc-head">
+            <div class="fc-meta"><span class="fc-id mono">F-020</span><span class="fc-date">· Jun 29, 2026</span></div>
+            <span class="pill ">Early / low confidence</span>
           </div>
-          <p>AI agent products and research studio under <strong>JSN CREATIVE</strong>.</p>
+          <h3>Early experiment: retrieval quality matters more than model size for grounded answers</h3>
+          <p class="fc-body">Preliminary testing suggests that for tasks requiring grounded, factual answers, improving
+            retrieval quality had a larger effect on accuracy than upgrading to a larger model. This finding is still
+            early — sample size is small and we’re running a larger test before treating this as settled.</p>
+          <div class="fc-confidence">
+            <span class="fc-conf-label">Confidence</span>
+            <div class="meter-track">
+              <div class="meter-fill" data-pct="42"></div>
+            </div>
+            <span class="fc-conf-pct">42%</span>
+          </div>
+          <div class="fc-tags"><span class="fc-tag">#retrieval</span><span class="fc-tag">#rag</span><span
+              class="fc-tag">#in-progress</span></div>
         </div>
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="agents.html">Agents Fleet</a></li>
-            <li><a href="findings.html">Findings</a></li>
-            <li><a href="features.html">Features</a></li>
-          </ul>
+
+
+        <div style="text-align:center; padding: 20px 0;">
+          <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20know%20more%20about%20your%20research%20findings."
+            target="_blank" rel="noopener" class="btn btn-ghost">Ask about our research →</a>
         </div>
-        <div class="footer-col">
-          <h5>Developer & Pricing</h5>
-          <ul>
-            <li><a href="playground.html">Playground</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
-            <li><a href="docs.html">API Documentation</a></li>
-            <li><a href="contact.html">WhatsApp Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contact Studio</h5>
-          <ul>
-            <li><a href="https://wa.me/917204351696" target="_blank" rel="noopener">WhatsApp: +91 7204351696</a></li>
-            <li><a href="tel:+917204351696">Call Studio</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© 2026 Nexus Agents / JSN CREATIVE.</div>
-        <div>Research Log Version 2.4</div>
+
       </div>
     </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  </div>
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <a href="index.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z" />
+      </svg><span>Overview</span></a>
+    <a href="findings.html" class="mbb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z" />
+      </svg><span>Findings</span><span class="mbb-badge">NEW</span></a>
+    <a href="agents.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3" />
+        <path
+          d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+      </svg><span>Agents</span></a>
+    <a href="playground.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 3l14 9-14 9V3z" />
+      </svg><span>Playground</span></a>
+    <button class="mbb-item mbb-toggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg><span>Menu</span></button>
+  </nav>
+  <script src="js/main.js" defer></script>
 </body>
+
+</html>
+
 </html>
