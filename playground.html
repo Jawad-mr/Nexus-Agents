@@ -1,189 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Playground — Nexus Agents</title>
-<meta name="description" content="Try a scripted preview of Nexus Agents in action — Support Router, Lead Qualifier, and Meeting Summarizer demos.">
-<link rel="stylesheet" href="css/core.css">
-<link rel="stylesheet" href="css/inner.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Agent Playground — Nexus Agents | JSN Creative</title>
+  <meta name="description" content="Test Nexus Agents in real-time. Try interactive simulations for Support Router, Lead Qualifier, Data Extractor, and Meeting Summarizer.">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/inner.css">
 </head>
 <body>
-<div class="app-shell">
 
-<div class="sb-overlay"></div>
-<aside class="sidebar">
-  <div class="sb-brand">
-    <div class="mark">N</div>
-    <div class="name">NEXUS<span class="sub">CUSTOM AI DEVELOPMENT</span></div>
-  </div>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">N</div>
+        <span>NEXUS AGENTS</span>
+        <span class="brand-tag">JSN CREATIVE</span>
+      </a>
 
-  <div class="sb-section">
-    <div class="sb-label">Lab</div>
-    <a href="index.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg><span>Overview</span></a>
-    <a href="findings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg><span>Findings</span><span class="badge">NEW</span></a>
-    <a href="agents.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Agents</span></a>
-    <a href="playground.html" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg><span>Playground</span></a>
-  </div>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="agents.html" class="nav-link">Agents Fleet</a>
+        <a href="findings.html" class="nav-link">Findings</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="playground.html" class="nav-link active">Playground</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="docs.html" class="nav-link">Docs & API</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-  <div class="sb-section">
-    <div class="sb-label">Product</div>
-    <a href="features.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg><span>Features</span></a>
-    <a href="pricing.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Pricing</span></a>
-    <a href="docs.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span>Docs & API</span></a>
-  </div>
-
-  <div class="sb-section">
-    <div class="sb-label">Studio</div>
-    <a href="settings.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Settings</span></a>
-    <a href="contact.html" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><span>Contact</span></a>
-  </div>
-
-  <div class="sb-footer">
-    <div class="sb-status">
-      <div class="dot"></div>
-      <div class="txt"><strong>System nominal</strong>12 agents online</div>
+      <div class="header-actions">
+        <div class="system-status-pill">
+          <span class="status-dot"></span>
+          <span>System Nominal</span>
+        </div>
+        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-primary btn-sm">Deploy Agent</a>
+        <button class="mobile-toggle" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
-    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team." target="_blank" rel="noopener" class="sb-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Talk to us</a>
-  </div>
-</aside>
-<div class="main">
+  </header>
 
-<div class="topbar">
-  <div class="topbar-left">
-    <button class="sb-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-    <div class="topbar-crumb">NEXUS <strong>/ Playground</strong></div>
-  </div>
-  <div class="topbar-right">
-    <div class="topbar-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" placeholder="Search findings..." aria-label="Search findings"></div>
-    <button class="topbar-icon-btn theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme"><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
-    <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
-    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
-  </div>
-</div>
-<div class="content">
-
-<div class="section-head reveal">
-  <div>
-    <h1 style="font-size:1.6rem;">Interactive AI Agent Demos</h1>
-    <p>Test how our custom AI agents process user messages, qualify sales leads, and summarize transcripts in real time.</p>
-  </div>
-</div>
-
-<div class="pg-layout">
-  <div class="panel pg-select-panel reveal">
-    <h3 style="margin-bottom:14px; font-size:0.95rem;">Choose an agent</h3>
-    <div class="pg-agent-option selected" data-demo="support">
-      <div class="agent-icon" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-      <div><div style="font-size:0.86rem; font-weight:600;">Support Router</div><div style="font-size:0.74rem; color:var(--text-faint);">Classifies & routes tickets</div></div>
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand">
+        <div class="brand-icon">N</div>
+        <span>NEXUS AGENTS</span>
+      </div>
+      <button class="drawer-close" aria-label="Close Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
     </div>
-    <div class="pg-agent-option" data-demo="lead">
-      <div class="agent-icon" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-      <div><div style="font-size:0.86rem; font-weight:600;">Lead Qualifier</div><div style="font-size:0.74rem; color:var(--text-faint);">Scores inbound leads</div></div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Overview</a>
+      <a href="agents.html" class="drawer-link">Agents Fleet</a>
+      <a href="findings.html" class="drawer-link">Findings</a>
+      <a href="features.html" class="drawer-link">Features</a>
+      <a href="playground.html" class="drawer-link active">Playground</a>
+      <a href="pricing.html" class="drawer-link">Pricing</a>
+      <a href="docs.html" class="drawer-link">Docs & API</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="settings.html" class="drawer-link">Settings</a>
+    </nav>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
+      <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-whatsapp" style="width: 100%;">
+        Talk on WhatsApp
+      </a>
     </div>
-    <div class="pg-agent-option" data-demo="meeting">
-      <div class="agent-icon" style="width:32px;height:32px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-      <div><div style="font-size:0.86rem; font-weight:600;">Meeting Summarizer</div><div style="font-size:0.74rem; color:var(--text-faint);">Transcript to action items</div></div>
+  </aside>
+
+  <main class="page-wrapper">
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Live Sandbox</span>
+          <h1>Agent Execution Playground</h1>
+          <p class="section-desc">Select an active agent profile and send test payloads to view real-time schema outputs and latency metrics.</p>
+        </div>
+
+        <div class="playground-grid">
+
+          <!-- Agent Selector -->
+          <div class="agent-selector-panel">
+            <h4 style="margin-bottom: 12px; color: var(--text);">Select Active Agent</h4>
+
+            <div class="agent-select-item active" data-agent-id="support-router">
+              <h4>Support Router</h4>
+              <p>Classification & Tier-2 Financial Routing</p>
+            </div>
+
+            <div class="agent-select-item" data-agent-id="lead-qualifier">
+              <h4>Lead Qualifier</h4>
+              <p>Firmographic ICP Ranking & Calendar Routing</p>
+            </div>
+
+            <div class="agent-select-item" data-agent-id="data-extractor">
+              <h4>Data Extractor</h4>
+              <p>Unstructured Document to JSON Schema</p>
+            </div>
+
+            <div class="agent-select-item" data-agent-id="meeting-summarizer">
+              <h4>Meeting Summarizer</h4>
+              <p>Transcript to Action Items & Sentiment</p>
+            </div>
+
+            <div style="margin-top: 16px; padding: 16px; background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+              <div style="font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 6px;">Want to integrate via API?</div>
+              <p style="font-size: 0.78rem; margin-bottom: 12px;">Access REST endpoints with bearer token auth.</p>
+              <a href="docs.html" class="btn btn-outline btn-sm" style="width: 100%;">View Developer Docs</a>
+            </div>
+          </div>
+
+          <!-- Chat Simulator -->
+          <div class="chat-simulator">
+            <div class="chat-header">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="status-dot"></span>
+                <span style="font-family: var(--font-mono); font-size: 0.84rem; font-weight: 600;">AGENT INTERACTIVE SESSION</span>
+              </div>
+              <span class="badge badge-emerald">Ready</span>
+            </div>
+
+            <div class="chat-messages">
+              <div class="msg agent">
+                Welcome to Nexus Agents Sandbox. Select an agent on the left or type a sample prompt below to observe structured output generation.
+              </div>
+            </div>
+
+            <div class="chat-input-area">
+              <input type="text" placeholder="Type a test scenario (e.g. Customer asking for billing refund)...">
+              <button class="btn btn-primary">Run Payload</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Deploy Banner -->
+    <section class="section" style="background: var(--surface-card);">
+      <div class="container text-center" style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2>Impressed by the execution speed?</h2>
+        <p style="margin: 12px 0 24px;">Deploy any agent directly to your infrastructure via WhatsApp assistance in under 30 minutes.</p>
+        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20tested%20the%20playground%20and%20want%20to%20deploy." data-wa-msg="Hi Nexus Agents, I tested the playground and want to deploy." class="btn btn-whatsapp btn-lg">
+          Deploy via WhatsApp (+91 7204351696)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">N</div>
+            <span>NEXUS AGENTS</span>
+          </div>
+          <p>AI agent products and research studio under <strong>JSN CREATIVE</strong>.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Links</h5>
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="agents.html">Agents Fleet</a></li>
+            <li><a href="findings.html">Findings</a></li>
+            <li><a href="features.html">Features</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Developer</h5>
+          <ul>
+            <li><a href="playground.html">Playground</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="docs.html">API Docs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="https://wa.me/917204351696" target="_blank" rel="noopener">WhatsApp Direct</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Nexus Agents / JSN CREATIVE.</div>
+        <div>Interactive Sandbox Sandbox v2</div>
+      </div>
     </div>
-    <p style="margin-top:18px; font-size:0.8rem;">This is a scripted preview, not a live model. Want the real thing running on your data?</p>
-    <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20tried%20the%20playground%20demo%20and%20want%20to%20see%20a%20live%20version." target="_blank" rel="noopener" class="btn btn-primary btn-block" style="margin-top:10px;">Request live demo</a>
-  </div>
+  </footer>
 
-  <div class="panel pg-chat reveal">
-    <div class="pg-messages" id="pg-messages"></div>
-    <div class="pg-input-row">
-      <input type="text" id="pg-input" placeholder="Type a message and press send..." aria-label="Message input">
-      <button class="btn btn-primary btn-sm" id="pg-send">Send</button>
-    </div>
-  </div>
-</div>
-
-<script>
-const demos = {
-  support: [
-    { role: 'user', text: "My payment failed twice but I was still charged." },
-    { role: 'agent', text: "Got it — this is a billing issue. Routing you to Billing Support and flagging as high priority since you were charged without a successful payment. A specialist will follow up within the hour." }
-  ],
-  lead: [
-    { role: 'user', text: "We're a 40-person logistics company looking to automate dispatch scheduling, budget around $15k/year." },
-    { role: 'agent', text: "Scoring this lead: company size and budget both match your ideal customer profile, and 'automate dispatch scheduling' is a strong intent signal. Marked as High Priority — recommend human follow-up within 24 hours." }
-  ],
-  meeting: [
-    { role: 'user', text: "[Uploads a 40-minute call transcript]" },
-    { role: 'agent', text: "Summary ready: 3 action items identified — (1) Priya to send updated pricing by Friday, (2) Design review pushed to next Tuesday, (3) Client requested a follow-up call with the ops lead. Full transcript and summary saved to your workspace." }
-  ]
-};
-
-let currentDemo = 'support';
-let activeTimers = [];
-const messagesEl = document.getElementById('pg-messages');
-const inputEl = document.getElementById('pg-input');
-const sendBtn = document.getElementById('pg-send');
-
-function clearTimers() {
-  activeTimers.forEach(t => clearTimeout(t));
-  activeTimers = [];
-}
-
-function renderDemo(key) {
-  clearTimers();
-  messagesEl.innerHTML = '';
-  demos[key].forEach((m, i) => {
-    const timer = setTimeout(() => {
-      const div = document.createElement('div');
-      div.className = 'pg-msg ' + m.role;
-      div.textContent = m.text;
-      messagesEl.appendChild(div);
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-    }, i * 400);
-    activeTimers.push(timer);
-  });
-}
-
-document.querySelectorAll('.pg-agent-option').forEach(opt => {
-  opt.addEventListener('click', () => {
-    document.querySelectorAll('.pg-agent-option').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    currentDemo = opt.getAttribute('data-demo');
-    renderDemo(currentDemo);
-  });
-});
-
-function sendMsg() {
-  const val = inputEl.value.trim();
-  if (!val) { renderDemo(currentDemo); return; }
-  clearTimers();
-  const div = document.createElement('div');
-  div.className = 'pg-msg user';
-  div.textContent = val;
-  messagesEl.appendChild(div);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
-  inputEl.value = '';
-  const timer = setTimeout(() => {
-    const reply = document.createElement('div');
-    reply.className = 'pg-msg agent';
-    reply.textContent = "This is a scripted playground preview, so responses are limited to the sample script. Message us on WhatsApp for a live, unscripted demo on your own data.";
-    messagesEl.appendChild(reply);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-  }, 400);
-  activeTimers.push(timer);
-}
-sendBtn.addEventListener('click', sendMsg);
-inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMsg(); });
-
-renderDemo('support');
-</script>
-
-</div>
-</div>
-</div>
-<nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
-  <a href="index.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg><span>Overview</span></a>
-  <a href="findings.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg><span>Findings</span><span class="mbb-badge">NEW</span></a>
-  <a href="agents.html" class="mbb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Agents</span></a>
-  <a href="playground.html" class="mbb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg><span>Playground</span></a>
-  <button class="mbb-item mbb-toggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
-</nav>
-<script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
