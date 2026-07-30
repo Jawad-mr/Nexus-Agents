@@ -1,5 +1,5 @@
 /* ===================================================================
-   NEXUS AGENTS — INNER PAGES RESPONSIVE STYLES
+   NEXUS AGENTS — DASHBOARD INNER PAGES RESPONSIVE STYLES
    Agents, Features, Playground, Pricing, Docs, Contact, Settings
    =================================================================== */
 
@@ -8,9 +8,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 20px;
 }
 
-.agent-card-header {
+.ac-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,10 +20,10 @@
 }
 
 .agent-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -32,37 +33,45 @@
 }
 
 .agent-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
 }
 
 .agent-card p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
   flex-grow: 1;
   margin-bottom: 20px;
 }
 
-.agent-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.agent-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   padding-top: 14px;
   border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.agent-stats .n {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.agent-stats .l {
+  font-size: 0.7rem;
   color: var(--text-faint);
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 /* Feature Rows & Architecture Highlights */
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 5vw, 56px);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
-  padding: clamp(32px, 5vw, 64px) 0;
+  padding: clamp(28px, 4vw, 56px) 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -81,14 +90,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 20px 0 24px;
+  margin: 18px 0 22px;
 }
 
 .feature-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 0.92rem;
+  gap: 10px;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
@@ -97,13 +106,13 @@
   height: 18px;
   color: var(--emerald);
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* Interactive Playground Grid */
 .playground-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: clamp(16px, 3vw, 28px);
   align-items: start;
 }
@@ -115,7 +124,7 @@
 }
 
 .agent-select-item {
-  padding: 14px 16px;
+  padding: 12px 16px;
   background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -130,7 +139,7 @@
 }
 
 .agent-select-item h4 {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   margin-bottom: 4px;
 }
 
@@ -145,12 +154,12 @@
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  height: clamp(420px, 60vh, 560px);
+  height: clamp(400px, 60vh, 540px);
   max-width: 100%;
 }
 
 .chat-header {
-  padding: 14px 20px;
+  padding: 12px 18px;
   background: var(--surface-raised);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -161,19 +170,19 @@
 
 .chat-messages {
   flex-grow: 1;
-  padding: 20px;
+  padding: 18px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .msg {
   max-width: 88%;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   line-height: 1.5;
   word-break: break-word;
 }
@@ -198,15 +207,15 @@
   background: var(--surface);
   border: 1px dashed var(--border);
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-family: var(--font-mono);
 }
 
 .chat-input-area {
-  padding: 14px 20px;
+  padding: 12px 18px;
   border-top: 1px solid var(--border);
   display: flex;
-  gap: 12px;
+  gap: 10px;
   background: var(--surface);
 }
 
@@ -215,7 +224,7 @@
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 10px 14px;
+  padding: 8px 12px;
   color: var(--text);
   min-height: var(--touch-target-min);
 }
@@ -224,7 +233,7 @@
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 3vw, 28px);
+  gap: clamp(16px, 3vw, 24px);
   align-items: stretch;
 }
 
@@ -240,33 +249,27 @@
   background: var(--surface-raised);
 }
 
-.pricing-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-}
-
 .price-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 6px;
 }
 
 .price-desc {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .price-amount {
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .price-amount span {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-faint);
   font-weight: 400;
 }
@@ -274,8 +277,8 @@
 .price-features {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
+  gap: 10px;
+  margin-bottom: 28px;
   flex-grow: 1;
 }
 
@@ -283,7 +286,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
 }
 
@@ -297,24 +300,24 @@
 /* Developer Docs Layout */
 .docs-grid {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: 220px 1fr;
+  gap: clamp(20px, 4vw, 40px);
 }
 
 .docs-sidebar {
   position: sticky;
-  top: calc(var(--header-height) + 24px);
+  top: calc(var(--topbar-height) + 20px);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .docs-nav-item {
-  padding: 10px 14px;
-  font-size: 0.88rem;
+  padding: 8px 12px;
+  font-size: 0.86rem;
   color: var(--text-muted);
   border-radius: var(--radius-sm);
-  min-height: 40px;
+  min-height: 38px;
   display: flex;
   align-items: center;
 }
@@ -328,12 +331,12 @@
 .docs-content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 36px;
   min-width: 0;
 }
 
 .docs-block {
-  padding-bottom: 36px;
+  padding-bottom: 30px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -345,13 +348,13 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 48px);
+  gap: clamp(20px, 4vw, 40px);
 }
 
 .contact-card {
   display: flex;
-  gap: 16px;
-  padding: 20px;
+  gap: 14px;
+  padding: 18px;
   background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -359,8 +362,8 @@
 }
 
 .contact-card-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background: var(--emerald-soft);
   border: 1px solid var(--emerald-border);
   color: var(--emerald);
@@ -376,9 +379,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--border);
-  gap: 20px;
+  gap: 16px;
 }
 
 .settings-row:last-child {
@@ -386,19 +389,19 @@
 }
 
 .settings-row h4 {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   margin-bottom: 4px;
 }
 
 .settings-row p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
 .toggle {
-  width: 46px;
-  height: 26px;
-  border-radius: 13px;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
   background: var(--surface-raised);
   border: 1px solid var(--border-strong);
   position: relative;
@@ -415,8 +418,8 @@
 .toggle::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #FFFFFF;
   top: 2px;
@@ -430,17 +433,11 @@
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
-  .feature-row { grid-template-columns: 1fr; gap: 28px; }
+  .feature-row { grid-template-columns: 1fr; gap: 24px; }
   .feature-row.reverse { direction: ltr; }
   .playground-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .docs-grid { grid-template-columns: 1fr; }
   .docs-sidebar { display: none; }
-  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-}
-
-@media (max-width: 480px) {
-  .chat-input-area { flex-direction: column; }
-  .chat-input-area button { width: 100%; }
-  .msg { max-width: 95%; }
+  .contact-grid { grid-template-columns: 1fr; gap: 28px; }
 }

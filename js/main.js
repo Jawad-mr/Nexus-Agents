@@ -1,51 +1,71 @@
 // ===================================================================
-// NEXUS AGENTS — CORE JS (ROBUST FRONTEND INTERACTION)
+// NEXUS AGENTS — DASHBOARD JS (ROBUST FRONTEND INTERACTION)
 // ===================================================================
 
 const WA_NUMBER = "917204351696";
 
 function formatWaLink(customMessage) {
-  const defaultMsg = "Hi Nexus Agents team, I would like to discuss deploying custom AI agents for our business.";
+  const defaultMsg = "Hi Nexus Agents team, I would like to discuss custom AI agent development for our business.";
   const text = encodeURIComponent(customMessage || defaultMsg);
   return `https://wa.me/${WA_NUMBER}?text=${text}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Drawer Navigation System
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const drawerOverlay = document.querySelector('.drawer-overlay');
-  const mobileDrawer = document.querySelector('.mobile-drawer');
-  const drawerClose = document.querySelector('.drawer-close');
 
-  function openDrawer() {
-    mobileDrawer?.classList.add('open');
-    drawerOverlay?.classList.add('open');
+  // 0. Theme Manager (Default dark theme with smooth toggle)
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('nexus-theme', theme);
+  }
+
+  const savedTheme = localStorage.getItem('nexus-theme') || 'dark';
+  setTheme(savedTheme);
+
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  });
+
+  // 1. Mobile Sidebar Navigation System
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sb-overlay');
+  const sbToggles = document.querySelectorAll('.sb-toggle, .mbb-toggle');
+
+  function openSidebar() {
+    sidebar?.classList.add('open');
+    overlay?.classList.add('open');
     document.body.style.overflow = 'hidden';
-    mobileToggle?.setAttribute('aria-expanded', 'true');
   }
 
-  function closeDrawer() {
-    mobileDrawer?.classList.remove('open');
-    drawerOverlay?.classList.remove('open');
+  function closeSidebar() {
+    sidebar?.classList.remove('open');
+    overlay?.classList.remove('open');
     document.body.style.overflow = '';
-    mobileToggle?.setAttribute('aria-expanded', 'false');
   }
 
-  mobileToggle?.addEventListener('click', openDrawer);
-  drawerClose?.addEventListener('click', closeDrawer);
-  drawerOverlay?.addEventListener('click', closeDrawer);
+  sbToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebar?.classList.contains('open') ? closeSidebar() : openSidebar();
+    });
+  });
 
-  document.querySelectorAll('.mobile-drawer a').forEach(link => {
-    link.addEventListener('click', closeDrawer);
+  overlay?.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', closeSidebar);
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
-      closeDrawer();
+    if (e.key === 'Escape' && sidebar?.classList.contains('open')) {
+      closeSidebar();
     }
   });
 
-  // 2. Format WhatsApp & Direct Call Links
+  // 2. Format WhatsApp & Phone Links
   document.querySelectorAll('[data-wa-msg]').forEach(el => {
     const msg = el.getAttribute('data-wa-msg');
     el.setAttribute('href', formatWaLink(msg));
@@ -85,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Findings Research Log Search & Filtering
   const filterBtns = document.querySelectorAll('.filter-btn, .filter-tab');
-  const findingCards = document.querySelectorAll('.finding-card');
-  const searchInput = document.querySelector('.findings-search input');
+  const findingCards = document.querySelectorAll('.finding-card, .finding-row');
+  const searchInput = document.querySelector('.findings-search input, .topbar-search input');
 
   function filterFindings() {
     if (!findingCards.length) return;
@@ -102,9 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesSearch = !query || content.includes(query);
 
       if (matchesCat && matchesSearch) {
-        card.style.display = 'block';
+        card.style.display = card.classList.contains('finding-row') ? 'flex' : 'block';
         card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
       } else {
         card.style.display = 'none';
       }
@@ -185,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.add('active');
       currentAgent = item.getAttribute('data-agent-id') || 'support-router';
       
-      const agentName = item.querySelector('h4')?.textContent || 'Agent';
+      const agentName = item.querySelector('h4, h3')?.textContent || 'Agent';
       addChatMessage('system', `Switched active agent simulation to: ${agentName}`);
     });
   });
@@ -196,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     msgDiv.className = `msg ${sender}`;
 
     if (typeof content === 'object') {
-      msgDiv.innerHTML = `<strong>Structured Output (${currentAgent}):</strong><pre>${JSON.stringify(content, null, 2)}</pre>`;
+      msgDiv.innerHTML = `<strong>Structured Output (${currentAgent}):</strong><pre style="margin-top:6px; font-family:var(--font-mono); font-size:0.8rem;">${JSON.stringify(content, null, 2)}</pre>`;
     } else {
       msgDiv.textContent = content;
     }

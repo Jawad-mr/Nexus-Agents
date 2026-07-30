@@ -1,89 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Platform Features & Reliability — Nexus Agents | JSN Creative</title>
-  <meta name="description" content="Discover why Nexus Agents platform is built for enterprise reliability: multi-agent handoffs, deterministic fallback chains, 99.9% uptime, and research-backed decision trees.">
+  <title>Features — Nexus Agents | JSN Creative</title>
+  <meta name="description" content="Nexus Agents features: fast response times, clean multi-agent handoffs, research-backed decisions, and high uptime.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/inner.css">
 </head>
+
 <body>
+  <div class="app-shell">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="brand">
-        <img src="favicon.svg" alt="Nexus Agents Logo" width="32" height="32" style="border-radius: 6px;">
-        <span>NEXUS AGENTS</span>
-        <span class="brand-tag">JSN CREATIVE</span>
-      </a>
-
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agents.html" class="nav-link">Agents Fleet</a>
-        <a href="findings.html" class="nav-link">Findings</a>
-        <a href="features.html" class="nav-link active">Features</a>
-        <a href="playground.html" class="nav-link">Playground</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="docs.html" class="nav-link">Docs & API</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="system-status-pill">
-          <span class="status-dot"></span>
-          <span>System Nominal</span>
-        </div>
-        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-primary btn-sm">Deploy Agent</a>
-        <button class="mobile-toggle" aria-label="Open Navigation Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+    <div class="sb-overlay"></div>
+    <aside class="sidebar">
+      <div class="sb-brand">
+        <div class="mark"><img src="favicon.svg" alt="Nexus Emblem" width="22" height="22"></div>
+        <div class="name">NEXUS<span class="sub">CUSTOM AI DEVELOPMENT</span></div>
       </div>
-    </div>
-  </header>
 
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <div class="brand">
-        <img src="favicon.svg" alt="Nexus Agents Logo" width="32" height="32" style="border-radius: 6px;">
-        <span>NEXUS AGENTS</span>
+      <div class="sb-section">
+        <div class="sb-label">Lab</div>
+        <a href="index.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg>
+          <span>Overview</span>
+        </a>
+        <a href="findings.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>
+          <span>Findings</span>
+          <span class="badge badge-amber">NEW</span>
+        </a>
+        <a href="agents.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span>Agents Fleet</span>
+        </a>
+        <a href="playground.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 3l14 9-14 9V3z"/></svg>
+          <span>Playground</span>
+        </a>
       </div>
-      <button class="drawer-close" aria-label="Close Navigation Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <nav class="drawer-links">
-      <a href="index.html" class="drawer-link">Overview</a>
-      <a href="agents.html" class="drawer-link">Agents Fleet</a>
-      <a href="findings.html" class="drawer-link">Findings</a>
-      <a href="features.html" class="drawer-link active">Features</a>
-      <a href="playground.html" class="drawer-link">Playground</a>
-      <a href="pricing.html" class="drawer-link">Pricing</a>
-      <a href="docs.html" class="drawer-link">Docs & API</a>
-      <a href="contact.html" class="drawer-link">Contact</a>
-      <a href="settings.html" class="drawer-link">Settings</a>
-    </nav>
-    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
-      <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20deploy%20an%20AI%20agent." data-wa-msg="Hi Nexus Agents, I want to deploy an AI agent." class="btn btn-whatsapp" style="width: 100%;">
-        Talk on WhatsApp
-      </a>
-    </div>
-  </aside>
 
-  <main class="page-wrapper">
-    <section class="section" style="background: var(--surface);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Architecture & Engineering</span>
-          <h1>Built for Zero-Downtime Precision</h1>
-          <p class="section-desc">We design agent infrastructure the same way mission-critical distributed systems are built — with isolation, typed schemas, and research-backed fallback chains.</p>
+      <div class="sb-section">
+        <div class="sb-label">Product</div>
+        <a href="features.html" class="sb-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          <span>Features</span>
+        </a>
+        <a href="pricing.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <span>Pricing</span>
+        </a>
+        <a href="docs.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          <span>Docs & API</span>
+        </a>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Studio</div>
+        <a href="settings.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+        <a href="contact.html" class="sb-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <div class="sb-footer">
+        <div class="sb-status">
+          <div class="dot"></div>
+          <div class="txt"><strong>System Nominal</strong>12 agents online</div>
+        </div>
+        <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20to%20talk%20to%20the%20team." target="_blank" rel="noopener" class="sb-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          Talk on WhatsApp
+        </a>
+      </div>
+    </aside>
+
+    <div class="main">
+
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="sb-toggle" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div class="topbar-crumb">NEXUS <strong>/ Features</strong></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" placeholder="Search findings..." aria-label="Search findings">
+          </div>
+          <button class="topbar-icon-btn theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </button>
+          <a href="https://wa.me/917204351696?text=Hi%20Nexus%20Agents%2C%20I%20want%20a%20demo." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get demo</a>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="section-head reveal">
+          <div>
+            <h1 style="font-size: 1.6rem; margin-bottom: 6px;">Platform Architecture & Reliability</h1>
+            <p>Engineered for zero-downtime precision with multi-agent orchestration and strict schema outputs.</p>
+          </div>
         </div>
 
-        <!-- Feature 1: Multi-agent Handoff -->
         <div class="feature-row reveal">
           <div>
             <span class="badge badge-accent" style="margin-bottom: 12px;">Seamless Handoffs</span>
@@ -98,10 +130,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                 <span>Asynchronous Redis event bus ensuring sub-200ms message delivery</span>
               </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Automatic deadlock recovery & event deduplication</span>
-              </li>
             </ul>
           </div>
           <div>
@@ -111,23 +139,17 @@
   <span class="code-kw">"event_id"</span>: <span class="code-str">"evt_99182301"</span>,
   <span class="code-kw">"source_agent"</span>: <span class="code-str">"email-triage"</span>,
   <span class="code-kw">"target_agent"</span>: <span class="code-str">"lead-qualifier"</span>,
-  <span class="code-kw">"handoff_status"</span>: <span class="code-str">"COMPLETED"</span>,
-  <span class="code-kw">"context"</span>: {
-    <span class="code-kw">"company"</span>: <span class="code-str">"Acme SaaS Corp"</span>,
-    <span class="code-kw">"estimated_users"</span>: <span class="code-num">250</span>,
-    <span class="code-kw">"route_to_demo"</span>: <span class="code-str">true</span>
-  }
+  <span class="code-kw">"status"</span>: <span class="code-str">"COMPLETED"</span>
 }</pre>
             </div>
           </div>
         </div>
 
-        <!-- Feature 2: Deterministic Schema Validation -->
         <div class="feature-row reverse reveal">
           <div>
             <span class="badge badge-emerald" style="margin-bottom: 12px;">Zero Hallucinations</span>
             <h2>Strict JSON Schema Enforcement</h2>
-            <p>Every agent response is parsed against strict runtime Zod / JSON schemas. If an LLM response violates schema constraints, deterministic recovery rules instantly re-evaluate or fallback before any database mutation takes place.</p>
+            <p>Every agent response is parsed against strict runtime Zod / JSON schemas before any database mutation takes place.</p>
             <ul class="feature-list">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -137,10 +159,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                 <span>Automatic type coercion & sanitization</span>
               </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Enterprise compliance audit logging for every execution</span>
-              </li>
             </ul>
           </div>
           <div>
@@ -148,108 +166,40 @@
               <pre><span class="code-com">// Schema Validator Verification</span>
 <span class="code-kw">const</span> SupportTicketSchema = z.object({
   ticketId: z.string().startsWith(<span class="code-str">"TICK-"</span>),
-  sentiment: z.enum([<span class="code-str">"Urgent"</span>, <span class="code-str">"Normal"</span>, <span class="code-str">"Low"</span>]),
-  confidenceScore: z.number().min(<span class="code-num">0.85</span>),
-  actionableDraft: z.string()
-});
-
-<span class="code-com">// Validated against production schema -> PASS</span></pre>
+  sentiment: z.enum([<span class="code-str">"Urgent"</span>, <span class="code-str">"Normal"</span>]),
+  confidenceScore: z.number().min(<span class="code-num">0.85</span>)
+});</pre>
             </div>
           </div>
         </div>
 
-        <!-- Feature 3: Enterprise Latency & Security -->
-        <div class="feature-row reveal">
-          <div>
-            <span class="badge badge-amber" style="margin-bottom: 12px;">Enterprise SLA</span>
-            <h2>Sub-200ms Median Latency & SOC2-Ready Security</h2>
-            <p>Our infrastructure maintains 99.9% uptime with localized model edge routing, automatic prompt token compression, and end-to-end PII obfuscation prior to model ingestion.</p>
-            <ul class="feature-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Edge model caching for recurring enterprise prompts</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Automated regex & NER sanitization for confidential data</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Webhooks & REST APIs with Bearer token authentication</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div class="card" style="background: var(--surface-card);">
-              <h4 style="margin-bottom: 16px;">Platform Reliability Metrics</h4>
-              <div style="display: flex; flex-direction: column; gap: 14px; font-family: var(--font-mono); font-size: 0.85rem;">
-                <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border);">
-                  <span style="color: var(--text-muted);">Execution Latency (p95)</span>
-                  <span style="color: var(--emerald);">184ms</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border);">
-                  <span style="color: var(--text-muted);">Schema Compliance Rate</span>
-                  <span style="color: var(--emerald);">100%</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border);">
-                  <span style="color: var(--text-muted);">Monthly Uptime SLA</span>
-                  <span style="color: var(--emerald);">99.94%</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span style="color: var(--text-muted);">Data Redaction Accuracy</span>
-                  <span style="color: var(--emerald);">99.8%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <img src="favicon.svg" alt="Nexus Agents Logo" width="28" height="28" style="border-radius: 6px;">
-            <span>NEXUS AGENTS</span>
-          </div>
-          <p>AI agent products and research studio under <strong>JSN CREATIVE</strong>.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Platform</h5>
-          <ul>
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="agents.html">Agents Fleet</a></li>
-            <li><a href="findings.html">Findings</a></li>
-            <li><a href="features.html">Features</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Developer</h5>
-          <ul>
-            <li><a href="playground.html">Playground</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="docs.html">API Docs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>WhatsApp First</h5>
-          <ul>
-            <li><a href="https://wa.me/917204351696" target="_blank" rel="noopener">WhatsApp: +91 7204351696</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© 2026 Nexus Agents / JSN CREATIVE.</div>
-        <div>System Nominal</div>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <script src="js/main.js"></script>
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <a href="index.html" class="mbb-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13h4v7H3zM10 4h4v16h-4zM17 9h4v11h-4z"/></svg>
+      <span>Overview</span>
+    </a>
+    <a href="findings.html" class="mbb-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>
+      <span>Findings</span>
+      <span class="mbb-badge">NEW</span>
+    </a>
+    <a href="agents.html" class="mbb-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09A1.65 1.65 0 0015.4 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.4.51.73.9 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      <span>Agents</span>
+    </a>
+    <a href="playground.html" class="mbb-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3l14 9-14 9V3z"/></svg>
+      <span>Playground</span>
+    </a>
+    <button class="mbb-item mbb-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <span>Menu</span>
+    </button>
+  </nav>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
