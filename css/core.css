@@ -192,11 +192,12 @@ ul, ol {
   height: 100vh;
   z-index: 100;
   overflow: hidden;
+  overflow-y: hidden;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sb-brand {
-  padding: 14px 16px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -205,8 +206,8 @@ ul, ol {
 }
 
 .sb-brand .mark {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   background: var(--panel-raised);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -223,14 +224,14 @@ ul, ol {
   display: flex;
   flex-direction: column;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.04em;
   color: var(--text);
   line-height: 1.1;
 }
 
 .sb-brand .sub {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
   color: var(--text-faint);
   letter-spacing: 0.03em;
@@ -238,27 +239,28 @@ ul, ol {
 }
 
 .sb-section {
-  padding: 10px 10px 4px;
+  padding: 6px 10px 2px;
+  flex-shrink: 0;
 }
 
 .sb-label {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 600;
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0 8px 4px;
+  padding: 0 8px 3px;
 }
 
 .sb-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 7px 10px;
-  min-height: 35px;
+  gap: 9px;
+  padding: 5px 9px;
+  min-height: 31px;
   border-radius: var(--radius-sm);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   font-weight: 500;
   transition: all 0.15s ease;
@@ -278,8 +280,8 @@ ul, ol {
 }
 
 .sb-item svg {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   color: var(--text-faint);
   transition: color 0.15s ease;
 }
@@ -297,11 +299,11 @@ ul, ol {
 
 .sb-footer {
   margin-top: auto;
-  padding: 12px 12px;
+  padding: 10px 10px;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
@@ -309,7 +311,7 @@ ul, ol {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 8px;
+  padding: 5px 8px;
   background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -324,7 +326,7 @@ ul, ol {
 }
 
 .sb-status .txt {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-faint);
   display: flex;
   flex-direction: column;
@@ -340,14 +342,14 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px 10px;
-  min-height: 35px;
+  gap: 6px;
+  padding: 6px 8px;
+  min-height: 32px;
   background: var(--emerald-soft);
   border: 1px solid var(--emerald-border);
   color: var(--emerald);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   border-radius: var(--radius-sm);
 }
 
@@ -703,6 +705,17 @@ ul, ol {
   .grid-2 { grid-template-columns: 1fr; }
   .topbar-crumb { font-size: 0.76rem; }
   .content { padding: 16px; }
+}
+
+@media (max-height: 650px) {
+  .sb-brand { padding: 8px 10px; }
+  .sb-section { padding: 3px 8px 1px; }
+  .sb-label { padding: 0 6px 1px; font-size: 0.58rem; }
+  .sb-item { min-height: 28px; padding: 4px 7px; font-size: 0.78rem; gap: 7px; }
+  .sb-item svg { width: 14px; height: 14px; }
+  .sb-footer { padding: 6px 8px; gap: 4px; }
+  .sb-status { padding: 4px 6px; font-size: 0.64rem; }
+  .sb-cta { min-height: 28px; padding: 4px 6px; font-size: 0.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
