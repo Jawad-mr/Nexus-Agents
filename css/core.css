@@ -7,32 +7,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --bg: #090D14;
-  --surface: #0F172A;
-  --panel: #0F172A;
-  --panel-raised: #1E293B;
-  --surface-raised: #1E293B;
-  --surface-hover: #334155;
-  --surface-card: #0D1322;
+  --bg: #090C15;
+  --surface: #0E131F;
+  --panel: #0E131F;
+  --panel-raised: #161D2E;
+  --surface-raised: #161D2E;
+  --surface-hover: #212B42;
+  --surface-card: #0E1320;
   
-  --border: #1E293B;
-  --border-soft: #1E293B;
-  --border-subtle: #293548;
-  --border-strong: #334155;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.2);
   
   --text: #F8FAFC;
   --text-muted: #94A3B8;
   --text-dim: #94A3B8;
   --text-faint: #64748B;
   
-  --amber: #F59E0B;
-  --amber-dim: rgba(245, 158, 11, 0.4);
-  --amber-glow: rgba(245, 158, 11, 0.08);
+  --cyan: #0EA5E9;
+  --cyan-soft: rgba(14, 165, 233, 0.12);
+  --cyan-border: rgba(14, 165, 233, 0.3);
   
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
-  --accent-soft: rgba(37, 99, 235, 0.12);
-  --accent-border: rgba(37, 99, 235, 0.35);
+  --amber: #0EA5E9;
+  --amber-dim: rgba(14, 165, 233, 0.3);
+  --amber-glow: rgba(14, 165, 233, 0.08);
+  --amber-soft: rgba(14, 165, 233, 0.12);
+  
+  --accent: #6366F1;
+  --accent-hover: #4F46E5;
+  --accent-soft: rgba(99, 102, 241, 0.14);
+  --accent-border: rgba(99, 102, 241, 0.35);
+  --accent-glow: rgba(99, 102, 241, 0.15);
   
   --emerald: #10B981;
   --mint: #10B981;
@@ -47,8 +53,8 @@
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 14px;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --touch-target-min: 44px;
 }
 
@@ -62,7 +68,7 @@
   --surface-card: #FFFFFF;
   
   --border: #E2E8F0;
-  --border-soft: #E2E8F0;
+  --border-soft: #F1F5F9;
   --border-subtle: #CBD5E1;
   --border-strong: #94A3B8;
   
@@ -71,14 +77,20 @@
   --text-dim: #475569;
   --text-faint: #64748B;
   
-  --amber: #D97706;
-  --amber-dim: rgba(217, 119, 6, 0.3);
-  --amber-glow: rgba(217, 119, 6, 0.06);
+  --cyan: #0284C7;
+  --cyan-soft: rgba(2, 132, 199, 0.08);
+  --cyan-border: rgba(2, 132, 199, 0.25);
   
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
-  --accent-soft: rgba(37, 99, 235, 0.08);
-  --accent-border: rgba(37, 99, 235, 0.25);
+  --amber: #0284C7;
+  --amber-dim: rgba(2, 132, 199, 0.25);
+  --amber-glow: rgba(2, 132, 199, 0.06);
+  --amber-soft: rgba(2, 132, 199, 0.08);
+  
+  --accent: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-soft: rgba(79, 70, 229, 0.09);
+  --accent-border: rgba(79, 70, 229, 0.28);
+  --accent-glow: rgba(79, 70, 229, 0.1);
   
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -577,9 +589,9 @@ ul, ol {
 }
 
 .pill.beta {
-  background: var(--amber-glow);
-  border-color: var(--amber-dim);
-  color: var(--amber);
+  background: var(--cyan-soft);
+  border-color: var(--cyan-border);
+  color: var(--cyan);
 }
 
 .badge {
@@ -595,7 +607,7 @@ ul, ol {
 }
 
 .badge-emerald { background: var(--emerald-soft); color: var(--emerald); border: 1px solid var(--emerald-border); }
-.badge-amber { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber-dim); }
+.badge-amber, .badge-cyan { background: var(--cyan-soft); color: var(--cyan); border: 1px solid var(--cyan-border); }
 .badge-accent { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); }
 
 /* Buttons System */

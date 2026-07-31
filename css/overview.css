@@ -27,7 +27,7 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: var(--amber-glow);
+  background: var(--accent-glow);
   pointer-events: none;
 }
 
@@ -94,7 +94,8 @@
 .fr-tag {
   font-family: var(--font-mono);
   font-size: 0.74rem;
-  color: var(--amber);
+  color: var(--cyan);
+  font-weight: 600;
   white-space: nowrap;
 }
 
