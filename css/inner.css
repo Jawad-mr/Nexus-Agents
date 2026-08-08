@@ -1,77 +1,92 @@
 /* ===================================================================
-   NEXUS AGENTS — DASHBOARD INNER PAGES RESPONSIVE STYLES
+   NEXUS AGENTS — GOOGLE GEMINI INNER PAGES STYLES
    Agents, Features, Playground, Pricing, Docs, Contact, Settings
    =================================================================== */
 
-/* Agent Fleet Cards */
+/* Agent Fleet Cards — Gemini Aesthetics */
 .agent-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
+  padding: 24px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.agent-card:hover {
+  border-color: var(--border-gemini);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gemini);
 }
 
 .ac-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   gap: 12px;
 }
 
 .agent-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  background: rgba(66, 133, 244, 0.1);
+  border: 1px solid rgba(66, 133, 244, 0.25);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: var(--gemini-blue);
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(66, 133, 244, 0.15);
 }
 
 .agent-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 .agent-card p {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   flex-grow: 1;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
 .agent-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding-top: 14px;
+  gap: 10px;
+  padding-top: 16px;
   border-top: 1px solid var(--border);
   text-align: center;
 }
 
 .agent-stats .n {
   font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--gemini-blue);
 }
 
 .agent-stats .l {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--text-faint);
+  margin-top: 2px;
 }
 
 /* Feature Rows & Architecture Highlights */
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 48px);
+  gap: clamp(28px, 5vw, 56px);
   align-items: center;
-  padding: clamp(28px, 4vw, 56px) 0;
+  padding: clamp(32px, 5vw, 64px) 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -89,77 +104,87 @@
 .feature-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 18px 0 22px;
+  gap: 14px;
+  margin: 20px 0 24px;
 }
 
 .feature-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 0.9rem;
+  gap: 12px;
+  font-size: 0.92rem;
   color: var(--text-muted);
 }
 
 .feature-list svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: var(--emerald);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-/* Interactive Playground Grid */
+/* Interactive Playground Grid — Gemini Workspace Feel */
 .playground-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: clamp(16px, 3vw, 28px);
+  grid-template-columns: 320px 1fr;
+  gap: clamp(20px, 3vw, 32px);
   align-items: start;
 }
 
 .agent-selector-panel {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .agent-select-item {
-  padding: 12px 16px;
+  padding: 14px 18px;
   background: var(--surface-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   cursor: pointer;
   min-height: var(--touch-target-min);
-  transition: all 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.agent-select-item:hover, .agent-select-item.active {
-  border-color: var(--accent);
+.agent-select-item:hover {
+  border-color: var(--border-gemini);
   background: var(--surface-raised);
+  transform: translateX(2px);
+}
+
+.agent-select-item.active {
+  border-color: var(--gemini-blue);
+  background: rgba(66, 133, 244, 0.1);
+  box-shadow: 0 0 16px rgba(66, 133, 244, 0.15);
 }
 
 .agent-select-item h4 {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 4px;
+  color: var(--text);
 }
 
 .agent-select-item p {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-faint);
 }
 
 .chat-simulator {
   background: var(--surface-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
-  height: clamp(400px, 60vh, 540px);
+  height: clamp(450px, 65vh, 600px);
   max-width: 100%;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .chat-header {
-  padding: 12px 18px;
+  padding: 16px 22px;
   background: var(--surface-raised);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -170,28 +195,29 @@
 
 .chat-messages {
   flex-grow: 1;
-  padding: 18px;
+  padding: 22px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .msg {
-  max-width: 88%;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 0.86rem;
-  line-height: 1.5;
+  max-width: 85%;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  line-height: 1.6;
   word-break: break-word;
+  box-shadow: var(--shadow-sm);
 }
 
 .msg.user {
   align-self: flex-end;
-  background: var(--accent);
+  background: var(--gemini-gradient);
   color: #FFFFFF;
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 4px;
 }
 
 .msg.agent {
@@ -199,23 +225,25 @@
   background: var(--surface-raised);
   border: 1px solid var(--border);
   color: var(--text);
-  border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 4px;
 }
 
 .msg.system {
   align-self: center;
-  background: var(--surface);
-  border: 1px dashed var(--border);
-  color: var(--text-muted);
-  font-size: 0.78rem;
+  background: rgba(66, 133, 244, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.2);
+  color: var(--gemini-blue);
+  font-size: 0.8rem;
   font-family: var(--font-mono);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
 }
 
 .chat-input-area {
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-top: 1px solid var(--border);
   display: flex;
-  gap: 10px;
+  gap: 12px;
   background: var(--surface);
 }
 
@@ -223,17 +251,24 @@
   flex-grow: 1;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
   color: var(--text);
-  min-height: var(--touch-target-min);
+  min-height: 42px;
+  transition: all 0.2s ease;
 }
 
-/* Pricing Grid */
+.chat-input-area input:focus {
+  border-color: var(--gemini-blue);
+  box-shadow: 0 0 12px var(--gemini-glow);
+  outline: none;
+}
+
+/* Pricing Grid — Gemini Cards */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 3vw, 24px);
+  gap: clamp(20px, 3vw, 28px);
   align-items: stretch;
 }
 
@@ -242,34 +277,46 @@
   flex-direction: column;
   position: relative;
   height: 100%;
+  padding: 28px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gemini);
 }
 
 .pricing-card.featured {
-  border-color: var(--accent);
-  background: var(--surface-raised);
+  border-color: var(--gemini-blue);
+  background: rgba(66, 133, 244, 0.04);
+  box-shadow: 0 0 24px rgba(66, 133, 244, 0.15);
 }
 
 .price-title {
-  font-size: 1.25rem;
-  margin-bottom: 6px;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  color: var(--text);
 }
 
 .price-desc {
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .price-amount {
   font-family: var(--font-mono);
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
   color: var(--text);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .price-amount span {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-faint);
   font-weight: 400;
 }
@@ -277,22 +324,22 @@
 .price-features {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 32px;
   flex-grow: 1;
 }
 
 .price-features li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.86rem;
+  gap: 12px;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
 .price-features svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: var(--emerald);
   flex-shrink: 0;
 }
@@ -300,8 +347,8 @@
 /* Developer Docs Layout */
 .docs-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: clamp(20px, 4vw, 40px);
+  grid-template-columns: 240px 1fr;
+  gap: clamp(24px, 4vw, 44px);
 }
 
 .docs-sidebar {
@@ -309,34 +356,35 @@
   top: calc(var(--topbar-height) + 20px);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .docs-nav-item {
-  padding: 8px 12px;
-  font-size: 0.86rem;
+  padding: 10px 16px;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  border-radius: var(--radius-sm);
-  min-height: 38px;
+  border-radius: var(--radius-pill);
+  min-height: 40px;
   display: flex;
   align-items: center;
+  transition: all 0.2s ease;
 }
 
 .docs-nav-item:hover, .docs-nav-item.active {
-  background: var(--surface-raised);
-  color: var(--text);
+  background: rgba(66, 133, 244, 0.1);
+  color: var(--gemini-blue);
   font-weight: 600;
 }
 
 .docs-content {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 40px;
   min-width: 0;
 }
 
 .docs-block {
-  padding-bottom: 30px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -348,26 +396,32 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 40px);
+  gap: clamp(24px, 4vw, 44px);
 }
 
 .contact-card {
   display: flex;
-  gap: 14px;
-  padding: 18px;
+  gap: 16px;
+  padding: 22px;
   background: var(--surface-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 16px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--border-gemini);
+  box-shadow: var(--shadow-gemini);
 }
 
 .contact-card-icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   background: var(--emerald-soft);
   border: 1px solid var(--emerald-border);
   color: var(--emerald);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,7 +433,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--border);
   gap: 16px;
 }
@@ -389,19 +443,19 @@
 }
 
 .settings-row h4 {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   margin-bottom: 4px;
 }
 
 .settings-row p {
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
 }
 
 .toggle {
-  width: 44px;
-  height: 24px;
-  border-radius: 12px;
+  width: 48px;
+  height: 26px;
+  border-radius: 9999px;
   background: var(--surface-raised);
   border: 1px solid var(--border-strong);
   position: relative;
@@ -411,24 +465,25 @@
 }
 
 .toggle.on {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--gemini-blue);
+  border-color: var(--gemini-blue);
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.4);
 }
 
 .toggle::after {
   content: '';
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #FFFFFF;
   top: 2px;
   left: 2px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .toggle.on::after {
-  transform: translateX(20px);
+  transform: translateX(22px);
 }
 
 /* Responsive Overrides */
