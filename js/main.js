@@ -1,5 +1,5 @@
 // ===================================================================
-// NEXUS AGENTS — DASHBOARD JS (ROBUST FRONTEND INTERACTION)
+// NEXUS AGENTS — DASHBOARD JS (ROBUST FRONTEND INTERACTION & AGENT SIMULATION)
 // ===================================================================
 
 const WA_NUMBER = "917204351696";
@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchInput?.addEventListener('input', filterFindings);
 
-  // Apply URL query params on findings page if present
   if (window.location.pathname.includes('findings.html')) {
     const urlParams = new URLSearchParams(window.location.search);
     const q = urlParams.get('q') || '';
@@ -150,59 +149,113 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 6. Interactive Playground Agent Simulator
+  // 6. Comprehensive Product & Playground Agent Simulator
   const agentItems = document.querySelectorAll('.agent-select-item');
   const chatMessages = document.querySelector('.chat-messages');
   const chatInput = document.querySelector('.chat-input-area input');
   const chatSendBtn = document.querySelector('.chat-input-area button');
 
   const agentResponses = {
-    'support-router': () => ({
-      ticket_id: "TICK-9042",
-      sentiment: "Urgent",
-      intent: "Billing Discrepancy",
-      routed_department: "Tier-2 Financial Ops",
+    'support': () => ({
+      ticket_id: "TICK-" + Math.floor(1000 + Math.random() * 9000),
+      sentiment: "Urgent Customer Inquiry",
+      intent: "Order Tracking & Refund Policy",
+      routed_department: "Tier-1 Customer Support",
       confidence: 0.994,
-      suggested_action: "Issue partial refund for transaction TX-88201",
-      latency_ms: 184
+      suggested_action: "Provide automated tracking link & dispatch return authorization form.",
+      latency_ms: 142
     }),
-    'lead-qualifier': () => ({
-      lead_score: 95,
+    'sales': () => ({
+      lead_score: 94,
       qualification_tier: "Enterprise Target",
-      estimated_acv: "$36,000",
-      matched_profile: "B2B SaaS > 100 Employees",
-      next_best_action: "Schedule Founder Discovery Call",
-      latency_ms: 215
+      estimated_budget: "$25,000 / yr",
+      matched_crm_deal: "DEAL-8832",
+      next_best_action: "Schedule Founder Discovery Call via Calendly",
+      latency_ms: 188
     }),
-    'data-extractor': () => ({
-      extracted_entities: {
-        vendor: "Acme Corp",
-        invoice_no: "INV-2026-99",
-        line_items: 4,
-        total_amount: "$4,290.00",
-        tax_id: "XX-902910"
-      },
-      schema_validation: "Passed 100%",
-      latency_ms: 145
+    'voice': () => ({
+      call_status: "Transcribed & Answered",
+      caller_intent: "Appointment Reschedule",
+      sentiment_score: 0.96,
+      speech_latency_ms: 110,
+      action_taken: "Updated Google Calendar slot to Friday 3:00 PM and sent SMS confirmation."
     }),
-    'meeting-summarizer': () => ({
-      action_items: [
-        "Deploy Lead Qualifier to staging by Thursday",
-        "Review API latency benchmarks with CTO"
-      ],
-      key_decisions: "Approved Fleet Tier expansion for Q3",
-      sentiment_score: 0.92,
-      latency_ms: 310
+    'content': () => ({
+      content_type: "SEO Blog Post & Social Snippets",
+      seo_optimization_score: "98/100",
+      readability: "Grade 8 (High Engagement)",
+      keywords_matched: ["AI Automation", "Workflow Engines", "n8n Agents"],
+      latency_ms: 290
+    }),
+    'resume': () => ({
+      match_score: "92%",
+      key_skills_found: ["Python", "n8n Workflows", "REST APIs", "LLM Fine-Tuning"],
+      gap_analysis: "Consider adding AWS / Cloud deployment certification.",
+      interview_readiness: "High"
+    }),
+    'shopping': () => ({
+      cart_analysis: "3 Items Selected",
+      cross_sell_recommendations: ["Matching Leather Belt", "Slim Wallet"],
+      discount_applied: "SAVE10",
+      checkout_friction_score: "Low (0.04)"
+    }),
+    'study': () => ({
+      document_parsed: "Chapter 4 — Quantum Mechanics.pdf",
+      key_concepts_extracted: ["Wave-particle duality", "Schrödinger Equation", "Heisenberg Uncertainty"],
+      quiz_generated: "5 Flashcards & 3 Practice MCQs ready."
+    }),
+    'legal': () => ({
+      document_type: "Master Services Agreement (MSA)",
+      risk_flags: ["Indemnity Cap Exceeded in Sec 8.2", "Non-compete term set to 36 months"],
+      compliance_rating: "Requires Revision"
+    }),
+    'clinic': () => ({
+      patient_triage_level: "Moderate (Non-Emergency)",
+      matched_symptoms: ["Mild Fever", "Seasonal Allergies"],
+      suggested_slot: "Tomorrow at 10:30 AM with Dr. Smith",
+      hipaa_compliance: "Verified 100%"
+    }),
+    'finance': () => ({
+      audit_status: "Approved",
+      extracted_vendor: "Stripe Invoice #9021",
+      tax_deductible: true,
+      anomaly_detected: false,
+      reconciliation_latency_ms: 95
+    }),
+    'website': () => ({
+      site_template: "Modern Obsidian Agency",
+      pages_generated: ["Home", "Features", "Pricing", "Contact"],
+      seo_meta_tags: "Configured automatically",
+      build_time_s: 1.4
+    }),
+    'meetings': () => ({
+      meeting_title: "Product Roadmap Sync",
+      action_items: ["Finalize v2.0 boxy redesign", "Deploy webhook triggers to production"],
+      transcript_summary: "Approved sharp n8n aesthetic and full product fleet linking."
+    }),
+    'recruitment': () => ({
+      candidate_name: "Sarah Jenkins",
+      resume_fit: "Senior Full-Stack Engineer",
+      parsed_experience: "6 Years (React, Node, Python)",
+      screening_quiz_result: "Passed (18/20)"
+    }),
+    'email': () => ({
+      email_intent: "Cold Outreach / Partnership Inquiry",
+      spam_score: "0.01 (Inbox Ready)",
+      suggested_followup_days: 3,
+      tone_analysis: "Professional & High Value"
     })
   };
 
-  let currentAgent = 'support-router';
+  // Determine current active product or simulator
+  const pageSimulator = document.querySelector('[data-agent-type]');
+  let currentAgent = pageSimulator ? pageSimulator.getAttribute('data-agent-type') : 'support';
 
   agentItems.forEach(item => {
     item.addEventListener('click', () => {
       agentItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
-      currentAgent = item.getAttribute('data-agent-id') || 'support-router';
+      currentAgent = item.getAttribute('data-agent-id') || item.getAttribute('data-agent-type') || 'support';
       
       const agentName = item.querySelector('h4, h3')?.textContent || 'Agent';
       addChatMessage('system', `Switched active agent simulation to: ${agentName}`);
@@ -215,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     msgDiv.className = `msg ${sender}`;
 
     if (typeof content === 'object') {
-      msgDiv.innerHTML = `<strong>Structured Output (${currentAgent}):</strong><pre style="margin-top:6px; font-family:var(--font-mono); font-size:0.8rem;">${JSON.stringify(content, null, 2)}</pre>`;
+      msgDiv.innerHTML = `<strong>Structured Output (${currentAgent.toUpperCase()} AGENT):</strong><pre style="margin-top:6px; font-family:var(--font-mono); font-size:0.8rem; background:rgba(0,0,0,0.2); padding:8px;">${JSON.stringify(content, null, 2)}</pre>`;
     } else {
       msgDiv.textContent = content;
     }
@@ -232,10 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
     chatInput.value = '';
 
     setTimeout(() => {
-      const responseFn = agentResponses[currentAgent] || agentResponses['support-router'];
+      const responseFn = agentResponses[currentAgent] || agentResponses['support'];
       const result = responseFn();
       addChatMessage('agent', result);
-    }, 350);
+    }, 300);
   }
 
   chatSendBtn?.addEventListener('click', handleUserMessage);

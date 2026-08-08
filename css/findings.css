@@ -1,5 +1,5 @@
 /* ===================================================================
-   NEXUS AGENTS — GOOGLE GEMINI FINDINGS STYLES
+   NEXUS AGENTS — N8N FINDINGS STYLES
    =================================================================== */
 
 .findings-header {
@@ -27,13 +27,13 @@
 .filter-btn, .filter-tab {
   padding: 8px 18px;
   min-height: 38px;
-  border-radius: var(--radius-pill);
+  border-radius: 0px;
   font-size: 0.84rem;
   font-weight: 500;
   color: var(--text-muted);
   background: var(--surface-raised);
   border: 1px solid var(--border);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -41,7 +41,7 @@
 .filter-btn:hover, .filter-tab:hover {
   color: var(--text);
   background: var(--surface-hover);
-  border-color: var(--border-gemini);
+  border-color: var(--border-strong);
 }
 
 .filter-btn.active, .filter-tab.active {
@@ -49,7 +49,7 @@
   background: rgba(255, 109, 90, 0.14);
   border-color: var(--n8n-coral);
   font-weight: 600;
-  box-shadow: 0 0 14px rgba(255, 109, 90, 0.22);
+  box-shadow: none;
 }
 
 .findings-search {
@@ -65,15 +65,15 @@
   min-height: 40px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
+  border-radius: 0px;
   color: var(--text);
   font-size: 0.86rem;
   transition: all 0.2s ease;
 }
 
 .findings-search input:focus {
-  border-color: var(--gemini-blue);
-  box-shadow: 0 0 12px var(--gemini-glow);
+  border-color: var(--n8n-coral);
+  box-shadow: none;
   outline: none;
 }
 
@@ -97,16 +97,15 @@
 .finding-card {
   background: var(--surface-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 0px;
   padding: clamp(22px, 3vw, 32px);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease;
+  box-shadow: none;
 }
 
 .finding-card:hover {
-  border-color: var(--border-gemini);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gemini);
+  border-color: var(--border-strong);
+  box-shadow: none;
 }
 
 .finding-meta {
@@ -160,7 +159,7 @@
   width: 90px;
   height: 6px;
   background: var(--surface);
-  border-radius: 9999px;
+  border-radius: 0px;
   overflow: hidden;
   border: 1px solid var(--border);
 }
@@ -168,8 +167,8 @@
 .confidence-fill {
   height: 100%;
   background: var(--emerald);
-  border-radius: 9999px;
-  box-shadow: 0 0 6px var(--emerald);
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 @media (max-width: 640px) {
