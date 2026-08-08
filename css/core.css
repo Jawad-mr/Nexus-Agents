@@ -5,44 +5,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Google Gemini Dark Aesthetic Tokens */
-  --bg: #0E1217;
-  --bg-subtle: #13171F;
-  --surface: #171C24;
-  --panel: #1E2430;
-  --panel-raised: #252D3C;
-  --surface-raised: #252D3C;
-  --surface-hover: #2D3748;
-  --surface-card: rgba(23, 28, 36, 0.85);
+  /* n8n Obsidian & Coral Aesthetic Tokens */
+  --bg: #0E0E10;
+  --bg-subtle: #141416;
+  --surface: #18181C;
+  --panel: #1E1E24;
+  --panel-raised: #25252E;
+  --surface-raised: #25252E;
+  --surface-hover: #2E2E38;
+  --surface-card: rgba(24, 24, 28, 0.85);
   
   --border: rgba(255, 255, 255, 0.08);
   --border-soft: rgba(255, 255, 255, 0.05);
   --border-subtle: rgba(255, 255, 255, 0.12);
   --border-strong: rgba(255, 255, 255, 0.2);
-  --border-gemini: rgba(66, 133, 244, 0.3);
+  --border-gemini: rgba(255, 109, 90, 0.35);
   
   --text: #F8FAFC;
-  --text-muted: #94A3B8;
-  --text-dim: #A0AEC0;
-  --text-faint: #64748B;
+  --text-muted: #A1A1AA;
+  --text-dim: #A1A1AA;
+  --text-faint: #71717A;
   
-  /* Gemini Gradient & Accent Palette */
-  --gemini-blue: #4285F4;
-  --gemini-purple: #A855F7;
-  --gemini-cyan: #38BDF8;
-  --gemini-pink: #EC4899;
-  --gemini-gradient: linear-gradient(135deg, #4285F4 0%, #A855F7 50%, #38BDF8 100%);
-  --gemini-glow: rgba(66, 133, 244, 0.18);
+  /* n8n Signature Coral & Node Palette */
+  --n8n-coral: #FF6D5A;
+  --n8n-pink: #EA4B71;
+  --n8n-purple: #7B42F6;
+  --n8n-orange: #FF8038;
+  --n8n-gradient: linear-gradient(135deg, #FF6D5A 0%, #EA4B71 50%, #7B42F6 100%);
+  --n8n-glow: rgba(255, 109, 90, 0.22);
 
-  --accent: #4285F4;
-  --accent-hover: #3367D6;
-  --accent-soft: rgba(66, 133, 244, 0.14);
-  --accent-border: rgba(66, 133, 244, 0.35);
-  --accent-glow: rgba(66, 133, 244, 0.2);
+  --gemini-blue: #FF6D5A;
+  --gemini-purple: #7B42F6;
+  --gemini-cyan: #FF8038;
+  --gemini-pink: #EA4B71;
+  --gemini-gradient: linear-gradient(135deg, #FF6D5A 0%, #EA4B71 50%, #7B42F6 100%);
+  --gemini-glow: rgba(255, 109, 90, 0.22);
+
+  --accent: #FF6D5A;
+  --accent-hover: #FF553E;
+  --accent-soft: rgba(255, 109, 90, 0.14);
+  --accent-border: rgba(255, 109, 90, 0.38);
+  --accent-glow: rgba(255, 109, 90, 0.25);
   
-  --cyan: #38BDF8;
-  --cyan-soft: rgba(56, 189, 248, 0.12);
-  --cyan-border: rgba(56, 189, 248, 0.3);
+  --cyan: #FF8038;
+  --cyan-soft: rgba(255, 128, 56, 0.14);
+  --cyan-border: rgba(255, 128, 56, 0.35);
   
   --emerald: #10B981;
   --emerald-soft: rgba(16, 185, 129, 0.12);
@@ -58,8 +65,8 @@
   --radius-lg: 20px;
   --radius-pill: 9999px;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.45);
-  --shadow-gemini: 0 4px 24px rgba(66, 133, 244, 0.15);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-gemini: 0 4px 24px rgba(255, 109, 90, 0.2);
   --touch-target-min: 44px;
 }
 
@@ -215,7 +222,7 @@ ul, ol {
               radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 45%);
 }
 
-/* Sidebar Navigation — Expanded Gemini Design with Auto Scroll */
+/* Sidebar Navigation — n8n Design Architecture with Fixed Footer & Hidden Scrollbar Track */
 .sidebar {
   width: var(--sidebar-width);
   background: var(--surface);
@@ -228,9 +235,17 @@ ul, ol {
   left: 0;
   height: 100vh;
   z-index: 100;
-  overflow-y: auto;
-  scrollbar-width: thin;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar::-webkit-scrollbar,
+.sb-nav-body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .sb-brand {
@@ -242,15 +257,14 @@ ul, ol {
   flex-shrink: 0;
   height: var(--topbar-height);
   background: var(--surface);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10;
 }
 
 .sb-brand .mark {
   width: 32px;
   height: 32px;
-  background: var(--gemini-gradient);
+  background: var(--n8n-gradient);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -258,7 +272,7 @@ ul, ol {
   font-weight: 800;
   font-size: 1rem;
   color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(66, 133, 244, 0.4);
+  box-shadow: 0 2px 12px rgba(255, 109, 90, 0.45);
   flex-shrink: 0;
 }
 
@@ -275,9 +289,17 @@ ul, ol {
 .sb-brand .sub {
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--gemini-blue);
+  color: var(--n8n-coral);
   letter-spacing: 0.06em;
   margin-top: 1px;
+}
+
+.sb-nav-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 16px;
 }
 
 .sb-section {
@@ -320,15 +342,15 @@ ul, ol {
 }
 
 .sb-item.active {
-  color: var(--gemini-blue);
-  background: rgba(66, 133, 244, 0.12);
+  color: var(--n8n-coral);
+  background: rgba(255, 109, 90, 0.14);
   font-weight: 600;
-  box-shadow: 0 0 12px rgba(66, 133, 244, 0.15);
+  box-shadow: 0 0 14px rgba(255, 109, 90, 0.22);
 }
 
 [data-theme="light"] .sb-item.active {
-  color: var(--accent);
-  background: rgba(26, 115, 232, 0.1);
+  color: var(--n8n-coral);
+  background: rgba(255, 109, 90, 0.12);
 }
 
 .sb-item svg {
@@ -340,7 +362,7 @@ ul, ol {
 }
 
 .sb-item:hover svg, .sb-item.active svg {
-  color: var(--gemini-blue);
+  color: var(--n8n-coral);
   transform: scale(1.1);
 }
 
@@ -349,6 +371,9 @@ ul, ol {
   font-size: 0.65rem;
   padding: 2px 6px;
   border-radius: 9999px;
+  background: var(--n8n-gradient);
+  color: #fff;
+  font-weight: 700;
 }
 
 .sb-footer {
@@ -359,7 +384,9 @@ ul, ol {
   flex-direction: column;
   gap: 8px;
   flex-shrink: 0;
-  background: var(--surface);
+  background: var(--bg-subtle);
+  position: relative;
+  z-index: 10;
 }
 
 .sb-status {

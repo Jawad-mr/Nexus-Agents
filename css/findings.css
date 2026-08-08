@@ -45,11 +45,11 @@
 }
 
 .filter-btn.active, .filter-tab.active {
-  color: var(--gemini-blue);
-  background: rgba(66, 133, 244, 0.12);
-  border-color: var(--gemini-blue);
+  color: var(--n8n-coral);
+  background: rgba(255, 109, 90, 0.14);
+  border-color: var(--n8n-coral);
   font-weight: 600;
-  box-shadow: 0 0 14px rgba(66, 133, 244, 0.18);
+  box-shadow: 0 0 14px rgba(255, 109, 90, 0.22);
 }
 
 .findings-search {
