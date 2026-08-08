@@ -209,17 +209,17 @@ ul, ol {
 }
 
 .sb-brand {
-  padding: 12px 14px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 
 .sb-brand .mark {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: var(--panel-raised);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -227,7 +227,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--accent);
   flex-shrink: 0;
 }
@@ -236,14 +236,14 @@ ul, ol {
   display: flex;
   flex-direction: column;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--text);
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .sb-brand .sub {
-  font-size: 0.58rem;
+  font-size: 0.5rem;
   font-weight: 600;
   color: var(--text-faint);
   letter-spacing: 0.03em;
@@ -251,32 +251,36 @@ ul, ol {
 }
 
 .sb-section {
-  padding: 6px 10px 2px;
+  padding: 3px 6px 0;
   flex-shrink: 0;
 }
 
 .sb-label {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.52rem;
   font-weight: 600;
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0 8px 3px;
+  padding: 0 4px 1px;
 }
 
 .sb-item {
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 5px 9px;
-  min-height: 31px;
+  gap: 6px;
+  padding: 2px 6px;
+  min-height: 18px;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
+  font-size: 0.64rem;
+  line-height: 1.15;
   color: var(--text-muted);
   font-weight: 500;
   transition: all 0.15s ease;
   margin-bottom: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sb-item:hover {
@@ -292,10 +296,11 @@ ul, ol {
 }
 
 .sb-item svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   color: var(--text-faint);
   transition: color 0.15s ease;
+  flex-shrink: 0;
 }
 
 .sb-item:hover svg, .sb-item.active svg {
@@ -304,45 +309,45 @@ ul, ol {
 
 .sb-item .badge {
   margin-left: auto;
-  font-size: 0.6rem;
-  padding: 2px 5px;
+  font-size: 0.56rem;
+  padding: 1px 4px;
   border-radius: 4px;
 }
 
 .sb-footer {
   margin-top: auto;
-  padding: 10px 10px;
+  padding: 6px 6px 8px;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
 .sb-status {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 8px;
+  gap: 6px;
+  padding: 3px 5px;
   background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
 }
 
 .sb-status .dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--emerald);
   flex-shrink: 0;
 }
 
 .sb-status .txt {
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   color: var(--text-faint);
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .sb-status .txt strong {
@@ -354,14 +359,14 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 6px 8px;
-  min-height: 32px;
+  gap: 5px;
+  padding: 4px 6px;
+  min-height: 24px;
   background: var(--emerald-soft);
   border: 1px solid var(--emerald-border);
   color: var(--emerald);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   border-radius: var(--radius-sm);
 }
 
@@ -371,8 +376,8 @@ ul, ol {
 }
 
 .sb-cta svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .sb-overlay {
