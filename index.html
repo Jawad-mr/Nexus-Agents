@@ -168,18 +168,58 @@
       <!-- Main Dashboard Content -->
       <div class="content">
 
-        <!-- Hero Strip -->
-        <div class="hero-strip reveal">
-          <div class="pill live" style="margin-bottom: 14px;">
-            <span class="dot"></span>CUSTOM AI AGENT DEVELOPMENT STUDIO
+        <!-- Lovable-Inspired Starting Hero View -->
+        <div class="lovable-hero-section reveal">
+          <div class="pill live" style="margin: 0 auto 16px; display: inline-flex;">
+            <span class="dot"></span>PURPOSE-BUILT AI AGENTS & WORKFLOW PLATFORMS
           </div>
-          <h1 style="margin-bottom: 12px;">Need a Custom AI Agent for Your Business?</h1>
-          <p style="font-size: 1.05rem; max-width: 720px; margin-bottom: 24px;">
-            Automate customer support, lead qualification, content creation, and data workflows with custom-built AI agents. We design, train, and deploy intelligent AI assistants tailored to your exact business needs under JSN Creative.
-          </p>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Build My Custom AI Agent →</a>
-            <a href="playground.html" class="btn btn-ghost">Try Live Demos</a>
+          <h1 class="lovable-hero-title">Build something <span class="highlight">Nexus</span></h1>
+          <p class="lovable-hero-subtitle">Create enterprise AI agents and automated n8n workflow platforms by chatting with AI</p>
+
+          <div class="lovable-prompt-container">
+            <form class="lovable-prompt-box" id="homePromptForm">
+              <input type="text" class="lovable-prompt-input" id="homePromptInput" placeholder="Ask Nexus Agents to build an AI agent for customer support, lead qualification, voice bot..." required aria-label="Ask Nexus Agents prompt input">
+              <div class="lovable-prompt-actions">
+                <div class="lovable-left-tools">
+                  <button type="button" class="lovable-tool-btn" title="Attach Workflow Context" aria-label="Attach File">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                  <select class="lovable-select" id="agentSelectType" aria-label="Select Agent Type">
+                    <option value="support">Customer Support Agent</option>
+                    <option value="sales">Sales Follow-up System</option>
+                    <option value="voice">Voice Receptionist</option>
+                    <option value="content">Content Studio</option>
+                    <option value="resume">Resume & Coach</option>
+                    <option value="shopping">Shopping Assistant</option>
+                    <option value="study">Study Assistant</option>
+                    <option value="legal">Legal Document Assistant</option>
+                    <option value="clinic">Medical Clinic Assistant</option>
+                    <option value="finance">Finance Manager</option>
+                    <option value="website">Website Builder</option>
+                    <option value="meetings">Meeting Assistant</option>
+                    <option value="recruitment">Recruitment Platform</option>
+                    <option value="email">Email Assistant</option>
+                  </select>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <button type="button" class="lovable-tool-btn" title="Voice Input" aria-label="Voice Prompt">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+                  </button>
+                  <button type="submit" class="lovable-submit-btn">
+                    <span>Build</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="lovable-shortcuts">
+              <span class="lovable-shortcut-tag" data-prompt="Build a 24/7 customer support bot for WhatsApp" data-type="support">WhatsApp Support Bot</span>
+              <span class="lovable-shortcut-tag" data-prompt="Qualify inbound leads and sync with CRM" data-type="sales">Lead Qualifier</span>
+              <span class="lovable-shortcut-tag" data-prompt="Audit contract liability clauses and NDAs" data-type="legal">Legal Contract Auditor</span>
+              <span class="lovable-shortcut-tag" data-prompt="Schedule medical clinic patient triage appointments" data-type="clinic">Clinic Patient Triage</span>
+              <span class="lovable-shortcut-tag" data-prompt="Parse invoice receipts and reconcile in QuickBooks" data-type="finance">ERP Invoice Audit</span>
+            </div>
           </div>
         </div>
 

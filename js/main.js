@@ -295,4 +295,42 @@ document.addEventListener('DOMContentLoaded', () => {
   chatInput?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') handleUserMessage();
   });
+
+  // 5. Lovable-inspired Homepage Prompt Console Logic
+  const homeForm = document.getElementById('homePromptForm');
+  const homeInput = document.getElementById('homePromptInput');
+  const agentSelect = document.getElementById('agentSelectType');
+  const shortcutTags = document.querySelectorAll('.lovable-shortcut-tag');
+
+  shortcutTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const promptText = tag.getAttribute('data-prompt');
+      const agentType = tag.getAttribute('data-type');
+      if (homeInput && promptText) homeInput.value = promptText;
+      if (agentSelect && agentType) agentSelect.value = agentType;
+    });
+  });
+
+  if (homeForm) {
+    homeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const promptText = homeInput?.value.trim();
+      const selectedType = agentSelect?.value || 'support';
+
+      if (!promptText) return;
+
+      sessionStorage.setItem('nexus_initial_prompt', promptText);
+      
+      const targetPage = `${selectedType}.html`;
+      window.location.href = targetPage;
+    });
+  }
+
+  // Auto-fill prompt if navigated from homepage prompt box
+  const savedPrompt = sessionStorage.getItem('nexus_initial_prompt');
+  if (savedPrompt && chatInput) {
+    chatInput.value = savedPrompt;
+    sessionStorage.removeItem('nexus_initial_prompt');
+  }
 });
+

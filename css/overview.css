@@ -2,6 +2,181 @@
    NEXUS AGENTS — N8N OVERVIEW STYLES
    =================================================================== */
 
+/* ===================================================================
+   LOVABLE-INSPIRED HERO & PROMPT CONSOLE STYLES (BOXY N8N ACCENT)
+   =================================================================== */
+
+.lovable-hero-section {
+  text-align: center;
+  padding: clamp(40px, 6vw, 72px) 20px clamp(36px, 5vw, 56px);
+  background: radial-gradient(circle at top center, rgba(255, 109, 90, 0.08) 0%, rgba(14, 14, 16, 0.95) 70%);
+  border: 1px solid var(--border-strong);
+  border-bottom: 2px solid var(--n8n-coral);
+  border-radius: 0px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.lovable-hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.lovable-hero-title .highlight {
+  background: linear-gradient(135deg, var(--n8n-coral), var(--n8n-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lovable-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.5;
+}
+
+/* Prompt Box Console Container */
+.lovable-prompt-container {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.lovable-prompt-box {
+  background: var(--surface-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 0px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.2s ease;
+  text-align: left;
+}
+
+.lovable-prompt-box:focus-within {
+  border-color: var(--n8n-coral);
+}
+
+.lovable-prompt-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text);
+  padding: 8px 4px;
+}
+
+.lovable-prompt-input::placeholder {
+  color: var(--text-faint);
+}
+
+.lovable-prompt-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.lovable-left-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lovable-tool-btn {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: all 0.15s ease;
+}
+
+.lovable-tool-btn:hover {
+  border-color: var(--n8n-coral);
+  color: var(--n8n-coral);
+  background: rgba(255, 109, 90, 0.1);
+}
+
+.lovable-select {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.lovable-select:focus {
+  border-color: var(--n8n-coral);
+}
+
+.lovable-submit-btn {
+  background: linear-gradient(135deg, var(--n8n-coral), var(--n8n-pink));
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 9px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.lovable-submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* Prompt Shortcut Chips */
+.lovable-shortcuts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.lovable-shortcut-tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lovable-shortcut-tag:hover {
+  border-color: var(--n8n-coral);
+  color: var(--text);
+}
+
 .hero-strip {
   background: var(--surface-card);
   border: 1px solid var(--border-strong);
